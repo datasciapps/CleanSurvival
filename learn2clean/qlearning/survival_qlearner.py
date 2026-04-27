@@ -6,6 +6,8 @@ import re
 import random
 import os.path
 from random import randint
+import optuna
+optuna.logging.set_verbosity(optuna.logging.WARNING)
 
 
 # import classes 
@@ -959,6 +961,125 @@ class SurvivalQlearner:
 
         
 
+
+    def optuna_search(self, dataset_name="None", loop=1):
+        """
+         This function generates an Optuna based cleaning strategy and executes it on the dataset.
+         Using Tree-structured Parzen Estimator (TPE) algorithm as a powerful SOTA baseline.
+         
+         Args:
+         - dataset_name: The name of the dataset being cleaned.
+         - loop: The number of trials to run (optuna n_trials).
+        """
+        check_missing = self.dataset.isnull().sum().sum() > 0
+        rr = ""
+        obtained_scores = []
+        best_so_far = []
+        timestamps = []
+        start_time = time.perf_counter()
+
+        def objective(trial):
+            random.seed(time.perf_counter())
+
+            if check_missing:
+                methods = ["-", "CCA", "MI", "Mean", "KNN", "Median", "-", "UC", "LASSO", "RFE", "IG",
+                        "-", "DBID", "DBT", "ED", "-", "MR", "MR", "MUO", "-", "-", "-"]
+                a1 = trial.suggest_int("imp", 1, 5)     # Imputation
+                a2 = trial.suggest_int("fs", 7, 10)     # Feature Selection
+                a3 = trial.suggest_int("od", 12, 14)    # Outlier Detection
+                # actions for duplicate detection are always 16-18
+                a4 = trial.suggest_int("dd", 16, 18)
+                rand_actions_list = [a1, a2, a3, a4, 19] # 19 is dummy for goal, overridden later
+            else:
+                methods = ["-", "UC", "LASSO", "RFE", "IG", "-",  "DBID", "DBT", "ED",
+                        "-",  "MR", "MR", "MUO", "-", "-", "-"]
+                a1 = trial.suggest_int("fs", 1, 4)      # Feature Selection
+                a2 = trial.suggest_int("od", 6, 8)      # Outlier Detection
+                a3 = trial.suggest_int("dd", 10, 12)
+                rand_actions_list = [a1, a2, a3, 13]
+
+            goals = ["RSF", "COX", "NN"]
+            metrics_name = ["C-Index", "C-Index", "C-Index"]
+            if self.goal not in goals:
+                raise ValueError("Goal invalid. Please choose between RSF, COX, NN")
+            else:
+                g = goals.index(self.goal)
+
+            traverse_name = methods[rand_actions_list[0]] + " -> "
+            for i in range(1, len(rand_actions_list)):
+                traverse_name += "%s -> " % methods[rand_actions_list[i]]
+            traverse_name = re.sub('- -> ', '', traverse_name) + goals[g]
+            name_list = re.sub(' -> ', ',', traverse_name).split(",")
+
+            if check_missing:
+                rand_actions_list[len(rand_actions_list)-1] = g+len(methods)-6
+                clean_methods = ["CCA", "MI", "Mean", "KNN", "Median", "UC", "LASSO", "RFE", "IG", "DBID", "DBT", "ED", "MR", "MR", "MUO"]
+                new_list = []
+                for i in range(len(name_list)-1):
+                    m = clean_methods.index(name_list[i])
+                    new_list.append(m)
+                new_list.append(g+len(clean_methods))
+            else:
+                self.dataset = self.handle_categorical(self.dataset)
+                rand_actions_list[len(rand_actions_list)-1] = g+len(methods)-5
+                clean_methods = ["UC", "LASSO", "RFE", "IG", "DBID", "DBT", "ED", "MR", "MR", "MUO"]
+                new_list = []
+                for i in range(len(name_list)-1):
+                    m = clean_methods.index(name_list[i])
+                    new_list.append(m)
+                new_list.append(g+len(clean_methods))
+            
+            dataset_copy = self.dataset.copy()
+            try:
+                p = self.construct_pipeline(dataset=dataset_copy, actions_list=new_list, time_col=self.time_col, event_col=self.event_col, check_missing=check_missing)
+                score = p[0]['quality_metric']
+            except Exception as e:
+                print(e)
+                score = 0
+            
+            nonlocal rr
+            rr += str((dataset_name, "optuna", goals[g], traverse_name, metrics_name[g], "Quality Metric: ", score)) + "\n"
+            obtained_scores.append(score)
+            
+            # record time and best
+            current_best = max(obtained_scores) if obtained_scores else 0
+            best_so_far.append(current_best)
+            timestamps.append(time.perf_counter() - start_time)
+
+            return score
+
+        study = optuna.create_study(direction="maximize", sampler=optuna.samplers.TPESampler(seed=42))
+        study.optimize(objective, n_trials=loop)
+
+        # compute statistics
+        average = sum(obtained_scores)
+        mean = average / len(obtained_scores) if obtained_scores else 0
+        sum_sq = sum((x - mean) ** 2 for x in obtained_scores)
+        standard_deviation = (sum_sq / len(obtained_scores)) ** 0.5 if obtained_scores else 0
+        
+        print(rr)
+        print(f"**Average score over {loop} experiments is: {mean}**")
+        print(f"**Standard deviation:{standard_deviation}**")
+        average_score_str = f"**Average score over {loop} experiments is: {mean}**\n**Standard deviation:{standard_deviation}**\n\n"
+        rr += average_score_str
+
+        # save to file (similar to random_search behavior to log bests and timestamps)
+        best_overall = best_so_far.copy()
+        time_overall = timestamps.copy()
+        best_overall.insert(0, "Best So Far")
+        best_overall.insert(0, "Optuna")
+        time_overall.insert(0, "Timestamps")
+        time_overall.insert(0, "Optuna")
+        
+        with open(os.path.join(os.path.dirname(__file__), '..', '..', 'save/') + str(self.file_name) + '_results.txt', mode='a+') as rr_file:
+            print("{}".format(rr), file=rr_file)
+        
+        with open(os.path.join(os.path.dirname(__file__), '..', '..', 'save/') + str(self.file_name) + '_timestamps.txt', mode='a+') as rr_file:
+            print("{}".format(best_overall), file=rr_file)
+            print("{}".format(time_overall), file=rr_file)
+
+        return None
+
     def random_cleaning(self, dataset_name="None", loop=1):
 
         """
@@ -1254,7 +1375,7 @@ class SurvivalQlearner:
     #         print()
     #         print(f"Grid Search completed in {(time.time() - start_time) / 60} mins")
     #         print()
-    #     with open('./save/'+dataset_name+'_results.txt', mode='a') as rr_file:
+    #     with open(os.path.join(os.path.dirname(__file__), '..', '..', 'save/')+dataset_name+'_results.txt', mode='a') as rr_file:
     #          print("{}".format(timestamps), file=rr_file)
 
     
@@ -1307,7 +1428,7 @@ class SurvivalQlearner:
     #         print()
     #         print(f'Grid Search Completed in {(time.time() - start_time) / 60} mins')
 
-    #     with open('./save/'+dataset_name+'_results.txt', mode='a') as rr_file:
+    #     with open(os.path.join(os.path.dirname(__file__), '..', '..', 'save/')+dataset_name+'_results.txt', mode='a') as rr_file:
     #         print("{}".format(results), file=rr_file)
     #         print("{}".format(timestamps), file=rr_file)
 

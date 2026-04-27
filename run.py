@@ -1,4 +1,4 @@
-from learn2clean.qlearning import qlearner as ql
+
 from learn2clean.qlearning import survival_qlearner as survival_ql
 import pandas as pd
 import json
@@ -26,9 +26,9 @@ model = args.model.upper()
 
 l2c = survival_ql.SurvivalQlearner(file_name=file_name, dataset=dataset, time_col=time_column, event_col=event_column, goal=model, json_path=json_path, threshold=0.6)
 
-edit = args.load.upper()
+edit = args.load_mode.upper() if args.load_mode else ""
 if edit == 'T':
-    txt_path = str(input("Provide path to txt file: "))
+    txt_path = args.load_file if args.load_file else str(input("Provide path to txt file: "))
     with open(txt_path, 'r+') as edges:
         for line in edges:
             edge = list(line.split(" "))
@@ -37,12 +37,12 @@ if edit == 'T':
             weight = int(edge[2])
             l2c.edit_edge(u, v, weight)
 elif edit == 'J':
-    graph_path = str(input("Provide path to txt file: "))
+    graph_path = args.load_file if args.load_file else str(input("Provide path to txt file: "))
     with open(graph_path, 'r+') as graph:
         data = json.load(graph)
         l2c.set_rewards(data)
 elif edit == 'D':
-    disable_path = str(input("Provide path to txt file: "))
+    disable_path = args.load_file if args.load_file else str(input("Provide path to txt file: "))
     with open(disable_path, 'r+') as disable:
         for op in disable:
             l2c.disable(op)
@@ -56,6 +56,9 @@ if job == "L":
 elif job == "R":
     repeat = int(args.algo_op)
     l2c.random_cleaning(dataset_name=file_name, loop=repeat)
+elif job == "O":
+    repeat = int(args.algo_op)
+    l2c.optuna_search(dataset_name=file_name, loop=repeat)
 elif job == 'C':
     pipelines_file_path = args.algo_op
     pipelines = open(pipelines_file_path, 'r')
