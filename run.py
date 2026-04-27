@@ -1,5 +1,5 @@
 
-from learn2clean.qlearning import survival_qlearner as survival_ql
+from cleansurvival.qlearning import survival_qlearner as survival_ql
 import pandas as pd
 import json
 import argparse
@@ -12,16 +12,22 @@ parser.add_argument('-lm', '--load_mode', help='Provide nothing or T for Choose 
 parser.add_argument('-lf', '--load_file', help='Provide path to: txt file to edit edges, txt file to disable steps or JSON file to import graph')
 parser.add_argument('-a', '--algo', help='Cleaning algorithm (learn2clean, random, custom, or no preparation)')
 parser.add_argument('-ao', '--algo_op', help='This argument only used in case of random or custom algos. In case of random provide a number for experiments and in case of custom provide a txt file that contain the pipelines')
+parser.add_argument('-tc', '--time_col', default='futime', help='Time column name')
+parser.add_argument('-ec', '--event_col', default='death', help='Event column name')
+parser.add_argument('-dc', '--drop_col', default='', help='Column name to drop')
 
 args = parser.parse_args()
 
-path = args.dataset  #"learn2clean/datasets/flchain.csv"
+path = args.dataset
 file_name = path.split("/")[-1]
-json_path = args.rewards  #'C:/Users/yosef/OneDrive/Desktop/Learn2Clean/python-package/config.json'
+json_path = args.rewards
 dataset = pd.read_csv(path)
-dataset.drop('rownames', axis=1, inplace=True)
-time_column = "futime"
-event_column = "death"
+
+if args.drop_col and args.drop_col in dataset.columns:
+    dataset.drop(args.drop_col, axis=1, inplace=True)
+
+time_column = args.time_col
+event_column = args.event_col
 model = args.model.upper()
 
 l2c = survival_ql.SurvivalQlearner(file_name=file_name, dataset=dataset, time_col=time_column, event_col=event_column, goal=model, json_path=json_path, threshold=0.6)

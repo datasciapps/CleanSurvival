@@ -11,14 +11,14 @@ optuna.logging.set_verbosity(optuna.logging.WARNING)
 
 
 # import classes 
-from learn2clean.imputation.imputer import Imputer 
-from learn2clean.duplicate_detection.duplicate_detector import Duplicate_detector
-from learn2clean.feature_selection.feature_selector import Feature_selector 
-from learn2clean.outlier_detection.outlier_detector import Outlier_detector 
-from learn2clean.survival_analysis.cox_model import CoxRegressor
-from learn2clean.survival_analysis.dh_neural_network import NeuralNetwork 
-from learn2clean.survival_analysis.random_survival_forest import RSF
-from learn2clean.regression.regressor import Regressor
+from cleansurvival.imputation.imputer import Imputer 
+from cleansurvival.duplicate_detection.duplicate_detector import Duplicate_detector
+from cleansurvival.feature_selection.feature_selector import Feature_selector 
+from cleansurvival.outlier_detection.outlier_detector import Outlier_detector 
+from cleansurvival.survival_analysis.cox_model import CoxRegressor
+from cleansurvival.survival_analysis.dh_neural_network import NeuralNetwork 
+from cleansurvival.survival_analysis.random_survival_forest import RSF
+from cleansurvival.regression.regressor import Regressor
 
 
 def update_q(q, r, state, next_state, action, beta, gamma, states_dict):

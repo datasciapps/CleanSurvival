@@ -3,21 +3,14 @@ import pandas as pd
 import json
 
 
-path = input("Enter the path to your dataset (CSV): ")
+path = "learn2clean/datasets/rotterdam_missing_MAR/rotterdam_missing_10_MAR.csv"  #insert the dataset path here
 file_name = path.split("/")[-1]
 json_path = "config.json"
 dataset = pd.read_csv(path)
-
-cols_to_drop_input = input("Enter the names of columns to drop, separated by commas (or press enter to skip): ")
-if cols_to_drop_input.strip():
-    cols_to_drop = [c.strip() for c in cols_to_drop_input.split(",")]
-    for col in cols_to_drop:
-        if col in dataset.columns:
-            dataset.drop(col, axis=1, inplace=True)
-            print(f"Dropped column: {col}")
-
-time_column = input("Enter the name of your time column: ")
-event_column = input("Enter the name of your event column: ")
+#dataset.drop('rownames', axis=1, inplace=True)
+dataset.drop('pid', axis=1, inplace=True)
+time_column = "dtime" #change these according to the time and event column in the dataset
+event_column = "death"
 model = ""
 available_models = ['RSF', 'COX', 'NN', 'OLS', 'LASSO_REG', 'MARS']
 while True:

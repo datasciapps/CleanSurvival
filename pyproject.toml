@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cleansurvival"
+version = "0.1.0"
+description = "Automated data cleaning for survival analysis models using Q-Learning."
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "pandas",
+    "numpy",
+    "scikit-survival",
+    "scikit-learn",
+    "optuna"
+]
