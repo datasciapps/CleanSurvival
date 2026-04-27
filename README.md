@@ -63,24 +63,32 @@ In addition to these configuration files, CleanSurvival supports importing diffe
 This flexibility allows you to customize CleanSurvival's behavior and adapt it to various data cleaning challenges and survival analysis tasks.
 
 
+## Installation
+
+You can install CleanSurvival as a Python package. Navigate to the `CleanSurvival` directory and run:
+
+```bash
+pip install -e .
+```
+
+This will automatically install dependencies like `scikit-survival` and `optuna`.
+
 ## How to Use
 
-CleanSurvival can be used in two ways:
+CleanSurvival can be used interactively or via batch processing:
 
-1. **Using app.py in an editor:**
+1. **Interactive Prompt (`app.py`)**:
 
-    - Open app.py in your preferred Python editor.
-    - Modify the `path` variable to point to your dataset.
-    - Modify the `json_path` variable to point to your reward configuration file (optional).
-    - Run the script.
-    - Follow the prompts to select a survival analysis model, configure the Q-Learning graph, and choose a cleaning algorithm.
+   - Open a terminal and navigate to the CleanSurvival directory.
+   - Run `python app.py`.
+   - Follow the interactive prompts to define your dataset path, time column, event column, ID columns to drop, and model parameters.
 
-2. **Using run.py in a terminal:**
+2. **Batch Processing via Terminal (`run.py`)**:
 
    - Open a terminal and navigate to the CleanSurvival directory.
    - Run the script with the following arguments:
    ```bash
-   python run.py -d <dataset_path> -r <rewards_path> -md <model> -lm <load_mode> -lf <load_file> -a <algo> -ao <algo_op>
+   python run.py -d <dataset_path> -r <rewards_path> -md <model> -lm <load_mode> -lf <load_file> -a <algo> -ao <algo_op> -tc <time_col> -ec <event_col> -dc <drop_col>
    ```
    - `-d`: Path to the dataset.
    - `-r`: Path to the JSON file containing rewards (optional).
@@ -89,10 +97,13 @@ CleanSurvival can be used in two ways:
    - `-lf`: Path to the file for editing the Q-Learning graph.
    - `-a`: Cleaning algorithm (CleanSurvival (L), random (R), custom (C), or no_preparation (N)).
    - `-ao`: Options for the cleaning algorithm (number of experiments for random, or path to a file containing pipelines for custom).
+   - `-tc`: Time column name.
+   - `-ec`: Event column name.
+   - `-dc`: Column to drop.
 
 ## Evaluation
 
-IBS and Brier Score can be computed separately by running 'python ibs_eval.py' and 'python brier_eval.py'.
+Evaluation metrics are separated into the examples folder to show replication of the manuscript. IBS and Brier Score can be computed separately by running `python examples/replication/ibs_eval.py` and `python examples/replication/brier_eval.py`.
 
 ## Relationship to CleanSurv
 
