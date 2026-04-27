@@ -8,22 +8,33 @@ from sksurv.metrics import brier_score
 from sklearn.preprocessing import StandardScaler
 import os
 import glob
+import argparse
 
-missingness = 10
-mechanism = "MNAR"
-pipeline = "L"
-model = "COX"
-data_name = "rotterdam"
-pattern = (f"save/{data_name}_cox_{pipeline}/*_*_{missingness}_{mechanism}.csv_"
-           f"pipeline_*_{model}_cleaned.csv") #can choose folder for the preprocessed and trained data
+parser = argparse.ArgumentParser(description='Brier Score Evaluation')
+parser.add_argument('-m', '--missingness', type=int, default=50, help='Missingness percentage (e.g. 50)')
+parser.add_argument('-mech', '--mechanism', type=str, default='MCAR', help='Mechanism (e.g. MCAR)')
+parser.add_argument('-p', '--pipeline', type=str, default='L', help='Pipeline (e.g. L)')
+parser.add_argument('-md', '--model', type=str, default='COX', help='Base model (e.g. COX)')
+parser.add_argument('-dn', '--data_name', type=str, default='rotterdam', help='Dataset root name')
+
+args = parser.parse_args()
+
+missingness = args.missingness
+mechanism = args.mechanism
+pipeline = args.pipeline
+model = args.model
+data_name = args.data_name
+
+# We expect files generated from the run_all_experiments scripts, e.g.:
+# save/rotterdam_cox_L/rotterdam_missing_50_MCAR.csv_pipeline_0_1_2_COX_cleaned.csv
+pattern = (f"../../save/{data_name}_{model.lower()}_{pipeline}/*_*_{missingness}_{mechanism}.csv_"
+           f"pipeline_*_{model}_cleaned.csv") 
+
 data_paths = sorted(glob.glob(pattern))[:10] 
 print("Found data files:", data_paths)
 time_col = 'dtime'
 event_col = 'death'
-models = ['COX', 
-          'RSF', 
-         # 'NN'
-         ]
+models = ['COX', 'RSF']
 
 def load_survival_data(data_path, time_col=time_col, event_col=event_col, test_size=0.2, random_state=42):
     df = pd.read_csv(data_path)

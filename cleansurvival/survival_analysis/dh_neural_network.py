@@ -10,12 +10,13 @@ from .Deephit.utils_network import *
 from .Deephit.get_main import get_valid_performance
 
 class NeuralNetwork:
-    def __init__(self, dataset, time_column, target_goal, config=None, verbose=False):
+    def __init__(self, dataset, time_column, target_goal, config=None, verbose=False, metric="c-index"):
         self.dataset = dataset
         self.time_column = time_column
         self.event_column = target_goal
         self.config = config
         self.verbose = verbose
+        self.metric = metric
     
 
     # Example function to prepare your dataset
@@ -92,6 +93,9 @@ class NeuralNetwork:
         MAX_VALUE = hyperparameters.get('MAX_VALUE', MAX_VALUE)
         OUT_ITERATION = hyperparameters.get('OUT_ITERATION', OUT_ITERATION)
         seed = hyperparameters.get('seed', seed)
+
+        if self.metric == 'ibs':
+            print("Warning: DeepHit currently defaults to C-Index optimization internally.")
 
         # Train and validate the model
         max_valid = get_valid_performance(DATA, MASK, in_parser, out_itr, eval_time, MAX_VALUE, OUT_ITERATION, seed)

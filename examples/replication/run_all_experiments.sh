@@ -19,6 +19,9 @@ fi
 
 echo "Using Python interpreter: $PYTHON"
 
+TOTAL=62
+CURRENT=1
+
 # 1. Base Learn2Clean Optimization for C-index (Discriminative)
 echo "=== Baseline: Optimize for C-Index ==="
 
@@ -33,7 +36,13 @@ for dataset in "rotterdam" "gbsg"; do
 
     for missing in "MCAR" "MAR" "MNAR"; do
         for pct in 10 20 30 40 50; do
-            echo "-> Running $dataset $pct% $missing for C-Index"
+            DONE_FILE="save/.run_all_cindex_${dataset}_${pct}_${missing}"
+            if [ -f "$DONE_FILE" ]; then
+                echo "[$CURRENT/$TOTAL] Skipping $dataset $pct% $missing for C-Index (already done)"
+                CURRENT=$((CURRENT+1))
+                continue
+            fi
+            echo "[$CURRENT/$TOTAL] -> Running $dataset $pct% $missing for C-Index"
             $PYTHON run.py \
                 -d cleansurvival/datasets/${dataset}_missing_${missing}/${dataset}_missing_${pct}_${missing}.csv \
                 -r config.json \
@@ -45,6 +54,8 @@ for dataset in "rotterdam" "gbsg"; do
                 -ec $ec \
                 -dc pid \
                 -mt c-index
+            touch "$DONE_FILE"
+            CURRENT=$((CURRENT+1))
         done
     done
 done
@@ -63,7 +74,13 @@ for dataset in "rotterdam" "gbsg"; do
 
     for missing in "MCAR" "MAR" "MNAR"; do
         for pct in 10 20 30 40 50; do
-            echo "-> Running $dataset $pct% $missing for IBS"
+            DONE_FILE="save/.run_all_ibs_${dataset}_${pct}_${missing}"
+            if [ -f "$DONE_FILE" ]; then
+                echo "[$CURRENT/$TOTAL] Skipping $dataset $pct% $missing for IBS (already done)"
+                CURRENT=$((CURRENT+1))
+                continue
+            fi
+            echo "[$CURRENT/$TOTAL] -> Running $dataset $pct% $missing for IBS"
             $PYTHON run.py \
                 -d cleansurvival/datasets/${dataset}_missing_${missing}/${dataset}_missing_${pct}_${missing}.csv \
                 -r config.json \
@@ -75,34 +92,55 @@ for dataset in "rotterdam" "gbsg"; do
                 -ec $ec \
                 -dc pid \
                 -mt ibs
+            touch "$DONE_FILE"
+            CURRENT=$((CURRENT+1))
         done
     done
 done
 
-echo "Experiments execution fully completed."
 # 3. Optimize for C-Index and IBS on FLCHAIN dataset
 echo "=== Running FLCHAIN ==="
-$PYTHON run.py \
-    -d cleansurvival/datasets/flchain.csv \
-    -r config.json \
-    -md COX \
-    -lm D \
-    -lf disable.txt \
-    -a L \
-    -tc futime \
-    -ec death \
-    -dc rownames \
-    -mt c-index
+DONE_FILE_FLC="save/.run_all_cindex_flchain"
+if [ -f "$DONE_FILE_FLC" ]; then
+    echo "[$CURRENT/$TOTAL] Skipping flchain for C-Index (already done)"
+    CURRENT=$((CURRENT+1))
+else
+    echo "[$CURRENT/$TOTAL] -> Running flchain for C-Index"
+    $PYTHON run.py \
+        -d cleansurvival/datasets/flchain.csv \
+        -r config.json \
+        -md COX \
+        -lm D \
+        -lf disable.txt \
+        -a L \
+        -tc futime \
+        -ec death \
+        -dc rownames \
+        -mt c-index
+    touch "$DONE_FILE_FLC"
+    CURRENT=$((CURRENT+1))
+fi
 
-$PYTHON run.py \
-    -d cleansurvival/datasets/flchain.csv \
-    -r config.json \
-    -md COX \
-    -lm D \
-    -lf disable.txt \
-    -a L \
-    -tc futime \
-    -ec death \
-    -dc rownames \
-    -mt ibs
+DONE_FILE_FLI="save/.run_all_ibs_flchain"
+if [ -f "$DONE_FILE_FLI" ]; then
+    echo "[$CURRENT/$TOTAL] Skipping flchain for IBS (already done)"
+    CURRENT=$((CURRENT+1))
+else
+    echo "[$CURRENT/$TOTAL] -> Running flchain for IBS"
+    $PYTHON run.py \
+        -d cleansurvival/datasets/flchain.csv \
+        -r config.json \
+        -md COX \
+        -lm D \
+        -lf disable.txt \
+        -a L \
+        -tc futime \
+        -ec death \
+        -dc rownames \
+        -mt ibs
+    touch "$DONE_FILE_FLI"
+    CURRENT=$((CURRENT+1))
+fi
+
+echo "Experiments execution fully completed."
 

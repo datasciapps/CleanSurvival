@@ -384,8 +384,7 @@ class Imputer():
         
         print("After missing values handling:")
 
-        print("Total", self.dataset.isnull(
-                ).sum().sum(), "rows are affected")
+        print("Total", dn.isnull().sum().sum(), "missing values remain")
         print("Missing values handling done with -- CPU time: %s seconds" %
             (time.time() - start_time))
         #print(dn)

@@ -73,7 +73,7 @@ def remove_adjacent(nums):
 
 class SurvivalQlearner:
 
-    def __init__(self, dataset, time_col, event_col, goal, verbose=False, json_path=None, file_name=None, threshold=None):
+    def __init__(self, dataset, time_col, event_col, goal, verbose=False, json_path=None, file_name=None, threshold=None, metric="c-index"):
 
         self.dataset = dataset
 
@@ -82,6 +82,8 @@ class SurvivalQlearner:
         self.event_col = event_col
 
         self.goal = goal
+
+        self.metric = metric
 
         self.json_path = json_path
 
@@ -396,7 +398,7 @@ class SurvivalQlearner:
                         else:
                             config = self.get_config_file("Duplicate_detector")
                     
-                    dataset = L2C_class[a](dataset = dataset, time_col = time_col, event_col = event_col, strategy = actions_name[a], config=config, verbose = self.verbose).transform()
+                    dataset = L2C_class[a](dataset = dataset, time_col = time_col, event_col = event_col, strategy = actions_name[a], config=config, verbose=self.verbose, metric=self.metric).transform()
 
                 if a in (7, 8, 9):
                     # Execute outlier detectors (7-9) based on the action index.
@@ -413,9 +415,9 @@ class SurvivalQlearner:
                 if a == 10:
                     # Execute Random Survival Forest
                     print(f'\nIN RSF --------------------------------> {dataset}\n\n')
-                    dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
+                    import os; os.makedirs("./save/rotterdam_cox_L", exist_ok=True); dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
                     config = self.get_config_file("RSF")
-                    rsf = L2C_class[a](dataset=dataset, time_column=time_col, target_goal=event_col, config=config, verbose=self.verbose)
+                    rsf = L2C_class[a](dataset=dataset, time_column=time_col, target_goal=event_col, config=config, verbose=self.verbose, metric=self.metric)
                     survival_probabilities, c_index = rsf.fit_rsf_model()
                     n = {"quality_metric": c_index}
                     print(f"IN RSF --------------------------------> {c_index} \n\n\n\n {n}")
@@ -425,11 +427,11 @@ class SurvivalQlearner:
                     print("\n\n\n\n\n\n\n")
                     print(dataset)
                     print("\n\n\n\n\n\n\n")
-                    dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_COX_cleaned.csv", index=False)
+                    import os; os.makedirs("./save/rotterdam_cox_L", exist_ok=True); dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_COX_cleaned.csv", index=False)
                     # TODO continue developing this file starting by adding "mode" parameter and then adjusting this part (cox) and then continue
                     config = self.get_config_file("CoxRegressor")
                     res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
-                    cox_model = L2C_class[a](dataset = dataset, time_column = time_col, target_goal = event_col, config=config, verbose = self.verbose)
+                    cox_model = L2C_class[a](dataset = dataset, time_column = time_col, target_goal = event_col, config=config, verbose=self.verbose, metric=self.metric)
                     c_index = cox_model.updated_fit()
                     if isinstance(c_index, np.generic):
                             c_index = c_index.item()
@@ -439,10 +441,10 @@ class SurvivalQlearner:
 
                 if a == 12:
                     # Execute Neural Network
-                    dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
+                    import os; os.makedirs("./save/rotterdam_cox_L", exist_ok=True); dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
                     config = self.get_config_file("NeuralNetwork")
                     res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
-                    nn = L2C_class[a](dataset = dataset, time_column = time_col, target_goal = event_col, config=config, verbose = self.verbose)
+                    nn = L2C_class[a](dataset = dataset, time_column = time_col, target_goal = event_col, config=config, verbose=self.verbose, metric=self.metric)
                     c_index = nn.fit_dh()
                     n = {"quality_metric": c_index}
                 
@@ -491,19 +493,19 @@ class SurvivalQlearner:
                     if a == 15:
                         # Execute Random Survival Forest
                         print(f'\nIN RSF --------------------------------> {dataset}\n\n')
-                        dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
+                        import os; os.makedirs("./save/rotterdam_cox_L", exist_ok=True); dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
                         config = self.get_config_file("RSF")
-                        rsf = L2C_class[a](dataset=dataset, time_column=time_col, target_goal=event_col, config=config, verbose=self.verbose)
+                        rsf = L2C_class[a](dataset=dataset, time_column=time_col, target_goal=event_col, config=config, verbose=self.verbose, metric=self.metric)
                         survival_probabilities, c_index = rsf.fit_rsf_model()
                         n = {"quality_metric": c_index}
                         print(f"IN RSF --------------------------------> {c_index} \n\n\n\n {n}")
 
                     if a == 16:
                         # Execute Cox Model
-                        dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_COX_cleaned.csv", index=False)
+                        import os; os.makedirs("./save/rotterdam_cox_L", exist_ok=True); dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_COX_cleaned.csv", index=False)
                         config = self.get_config_file("CoxRegressor")
                         res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
-                        cox_model = L2C_class[a](dataset=dataset, time_column=time_col, target_goal=event_col, config=config, verbose=self.verbose)
+                        cox_model = L2C_class[a](dataset=dataset, time_column=time_col, target_goal=event_col, config=config, verbose=self.verbose, metric=self.metric)
                         c_index = cox_model.updated_fit()
                         if isinstance(c_index, np.generic):
                             c_index = c_index.item()
@@ -513,10 +515,10 @@ class SurvivalQlearner:
 
                     if a == 17:
                         # Execute Neural Network
-                        dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
+                        import os; os.makedirs("./save/rotterdam_cox_L", exist_ok=True); dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
                         config = self.get_config_file("NeuralNetwork")
                         res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
-                        nn = L2C_class[a](dataset = dataset, time_column = time_col, target_goal = event_col, config=config, verbose = self.verbose)
+                        nn = L2C_class[a](dataset = dataset, time_column = time_col, target_goal = event_col, config=config, verbose=self.verbose, metric=self.metric)
                         c_index = nn.fit_dh()
                         n = {"quality_metric": c_index}
                     

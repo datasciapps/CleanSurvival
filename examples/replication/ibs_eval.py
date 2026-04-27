@@ -8,23 +8,33 @@ from sksurv.metrics import integrated_brier_score
 import glob
 import os
 import re
+import argparse
 
-missingness = 40
-mechanism = "MCAR"
-pipeline = "R"
-model = "COX"
-data_name = "rotterdam"
-pattern = (f"save/{data_name}_cox_{pipeline}/*_*_{missingness}_{mechanism}.csv_"
-           f"pipeline_*_{model}_cleaned.csv") #can choose folder for the preprocessed and trained data
+parser = argparse.ArgumentParser(description='Integrated Brier Score Evaluation')
+parser.add_argument('-m', '--missingness', type=int, default=50, help='Missingness percentage')
+parser.add_argument('-mech', '--mechanism', type=str, default='MCAR', help='Mechanism')
+parser.add_argument('-p', '--pipeline', type=str, default='L', help='Pipeline')
+parser.add_argument('-md', '--model', type=str, default='COX', help='Base model')
+parser.add_argument('-dn', '--data_name', type=str, default='rotterdam', help='Dataset root name')
+parser.add_argument('-n', '--n_runs', type=int, default=20, help='Number of bootstrap runs')
+
+args = parser.parse_args()
+
+missingness = args.missingness
+mechanism = args.mechanism
+pipeline = args.pipeline
+model = args.model
+data_name = args.data_name
+N_Runs = args.n_runs
+
+pattern = (f"../../save/{data_name}_{model.lower()}_{pipeline}/*_*_{missingness}_{mechanism}.csv_"
+           f"pipeline_*_{model}_cleaned.csv")
+
 data_paths = sorted(glob.glob(pattern))[:10] 
 print("Found data files:", data_paths)
 time_col = 'dtime'
 event_col = 'death'
-models = ['COX', 
-          'RSF', 
-         # 'NN'
-         ]
-N_Runs = 20
+models = ['COX', 'RSF']
 
 def load_survival_data(data_path, time_col=time_col, event_col=event_col, test_size=0.2, random_state=42):
     df = pd.read_csv(data_path)
