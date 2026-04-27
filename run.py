@@ -1,3 +1,7 @@
+import os
+# Suppress noisy TensorFlow and OneDNN logs before loading dependencies
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
 from cleansurvival.qlearning import survival_qlearner as survival_ql
 import pandas as pd
@@ -15,6 +19,7 @@ parser.add_argument('-ao', '--algo_op', help='This argument only used in case of
 parser.add_argument('-tc', '--time_col', default='futime', help='Time column name')
 parser.add_argument('-ec', '--event_col', default='death', help='Event column name')
 parser.add_argument('-dc', '--drop_col', default='', help='Column name to drop')
+parser.add_argument('-mt', '--metric', default='c-index', help='Metric to optimize: c-index or ibs')
 
 args = parser.parse_args()
 
@@ -29,8 +34,9 @@ if args.drop_col and args.drop_col in dataset.columns:
 time_column = args.time_col
 event_column = args.event_col
 model = args.model.upper()
+metric = args.metric.lower()
 
-l2c = survival_ql.SurvivalQlearner(file_name=file_name, dataset=dataset, time_col=time_column, event_col=event_column, goal=model, json_path=json_path, threshold=0.6)
+l2c = survival_ql.SurvivalQlearner(file_name=file_name, dataset=dataset, time_col=time_column, event_col=event_column, goal=model, json_path=json_path, threshold=0.6, metric=metric)
 
 edit = args.load_mode.upper() if args.load_mode else ""
 if edit == 'T':
