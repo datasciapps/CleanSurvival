@@ -129,7 +129,7 @@ class Regressor():
             mse = None
         else:
             my_alphas = np.array([0.001, 0.01, 0.02, 0.025, 0.05, 0.1, 0.25, 0.5, 0.8, 1.0, 1.2])
-            lcv = LassoCV(alphas=my_alphas, normalize=False, fit_intercept=False, random_state=0, cv=self.k_folds, tol=0.0001)
+            lcv = LassoCV(alphas=my_alphas, normalize=False, fit_intercept=False, random_state=0, cv=self.k_folds, tol=0.0001, max_iter=10000)
 
             lcv.fit(X_train, y_train)
 
