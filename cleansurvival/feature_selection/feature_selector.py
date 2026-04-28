@@ -186,7 +186,7 @@ class Feature_selector():
 
         # Fit LassoCV with encoded event column and time column
         # warnings.filterwarnings("ignore", category=ConvergenceWarning)
-        lasso = LassoCV(cv=5)
+        lasso = LassoCV(cv=5, max_iter=10000)
         lasso.fit(x, event_labels)
         # Return the selected features based on non-zero coefficient values
         selected_features = lasso.coef_ != 0
