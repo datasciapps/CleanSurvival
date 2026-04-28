@@ -31,7 +31,7 @@ for dataset in "rotterdam" "gbsg"; do
         for pct in 10 20 30 40 50; do
             echo "Running Optuna loops for stats generation for $dataset $pct% $missing (20 iterations)..."
             for i in {1..20}; do
-                DONE_FILE="save/.optuna_done_${dataset}_${pct}_${missing}_${i}"
+                DONE_FILE="results/.optuna_done_${dataset}_${pct}_${missing}_${i}"
                 if [ -f "$DONE_FILE" ]; then
                     echo "[$CURRENT/$TOTAL] Skipping Optuna iteration $i/20 for $dataset $pct% $missing (already done)"
                     CURRENT=$((CURRENT+1))
@@ -58,7 +58,7 @@ done
 
 echo "Running Optuna loops for FLCHAIN (20 iterations)..."
 for i in {1..20}; do
-    DONE_FILE="save/.optuna_done_flchain_${i}"
+    DONE_FILE="results/.optuna_done_flchain_${i}"
     if [ -f "$DONE_FILE" ]; then
         echo "[$CURRENT/$TOTAL] Skipping Optuna iteration $i/20 for flchain (already done)"
         CURRENT=$((CURRENT+1))

@@ -27,7 +27,7 @@ model = args.model
 data_name = args.data_name
 N_Runs = args.n_runs
 
-pattern = (f"../../save/{data_name}_{model.lower()}_{pipeline}/*_*_{missingness}_{mechanism}.csv_"
+pattern = (f"../../results/{data_name}_{model.lower()}_{pipeline}/*_*_{missingness}_{mechanism}.csv_"
            f"pipeline_*_{model}_cleaned.csv")
 
 data_paths = sorted(glob.glob(pattern))[:10] 

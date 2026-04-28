@@ -26,8 +26,8 @@ model = args.model
 data_name = args.data_name
 
 # We expect files generated from the run_all_experiments scripts, e.g.:
-# save/rotterdam_cox_L/rotterdam_missing_50_MCAR.csv_pipeline_0_1_2_COX_cleaned.csv
-pattern = (f"../../save/{data_name}_{model.lower()}_{pipeline}/*_*_{missingness}_{mechanism}.csv_"
+# results/rotterdam_cox_L/rotterdam_missing_50_MCAR.csv_pipeline_0_1_2_COX_cleaned.csv
+pattern = (f"../../results/{data_name}_{model.lower()}_{pipeline}/*_*_{missingness}_{mechanism}.csv_"
            f"pipeline_*_{model}_cleaned.csv") 
 
 data_paths = sorted(glob.glob(pattern))[:10] 

@@ -36,7 +36,7 @@ for dataset in "rotterdam" "gbsg"; do
 
     for missing in "MCAR" "MAR" "MNAR"; do
         for pct in 10 20 30 40 50; do
-            DONE_FILE="save/.run_all_cindex_${dataset}_${pct}_${missing}"
+            DONE_FILE="results/.run_all_cindex_${dataset}_${pct}_${missing}"
             if [ -f "$DONE_FILE" ]; then
                 echo "[$CURRENT/$TOTAL] Skipping $dataset $pct% $missing for C-Index (already done)"
                 CURRENT=$((CURRENT+1))
@@ -74,7 +74,7 @@ for dataset in "rotterdam" "gbsg"; do
 
     for missing in "MCAR" "MAR" "MNAR"; do
         for pct in 10 20 30 40 50; do
-            DONE_FILE="save/.run_all_ibs_${dataset}_${pct}_${missing}"
+            DONE_FILE="results/.run_all_ibs_${dataset}_${pct}_${missing}"
             if [ -f "$DONE_FILE" ]; then
                 echo "[$CURRENT/$TOTAL] Skipping $dataset $pct% $missing for IBS (already done)"
                 CURRENT=$((CURRENT+1))
@@ -100,7 +100,7 @@ done
 
 # 3. Optimize for C-Index and IBS on FLCHAIN dataset
 echo "=== Running FLCHAIN ==="
-DONE_FILE_FLC="save/.run_all_cindex_flchain"
+DONE_FILE_FLC="results/.run_all_cindex_flchain"
 if [ -f "$DONE_FILE_FLC" ]; then
     echo "[$CURRENT/$TOTAL] Skipping flchain for C-Index (already done)"
     CURRENT=$((CURRENT+1))
@@ -121,7 +121,7 @@ else
     CURRENT=$((CURRENT+1))
 fi
 
-DONE_FILE_FLI="save/.run_all_ibs_flchain"
+DONE_FILE_FLI="results/.run_all_ibs_flchain"
 if [ -f "$DONE_FILE_FLI" ]; then
     echo "[$CURRENT/$TOTAL] Skipping flchain for IBS (already done)"
     CURRENT=$((CURRENT+1))
