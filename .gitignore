@@ -1,3 +1,4 @@
 venv/data/
 **/__pycache__/
 .optuna_done*
+.run_all*

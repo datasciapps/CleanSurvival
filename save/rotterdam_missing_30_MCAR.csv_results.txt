@@ -1,0 +1,760 @@
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7989116081233233)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.7656128797522541**
+**Standard deviation:0.06836013827516567**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7088131413404669)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.7661619859031842**
+**Standard deviation:0.06836634548535324**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8077962874159943)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.7662051917050989**
+**Standard deviation:0.06868381645591601**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7088131413404669)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8258166314865515)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.7659586687540579**
+**Standard deviation:0.06818385559843555**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7088131413404669)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.7661619859031842**
+**Standard deviation:0.06836634548535324**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8258166314865515)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.7657555792892855**
+**Standard deviation:0.06835807858659619**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8158392459691324)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765090420254791**
+**Standard deviation:0.06781681735858083**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.802269820971867)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.7658367606088238**
+**Standard deviation:0.06847422958742722**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6538413308811235)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.762497198539228**
+**Standard deviation:0.07267963378228275**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7088131413404669)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.7661619859031842**
+**Standard deviation:0.06836634548535324**
+
+
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.786817701877611)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.7057667993688808)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8288663887234465)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6628905520764388)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6631196646470818)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7792033671062234)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6673442080426545)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.8041018584156902)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6646467428728825)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8325565970222198)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'MI -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.8296591087605383)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'CCA -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7994034912106881)
+('rotterdam_missing_30_MCAR.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.7998937724073828)
+**Average score over 15 experiments is: 0.765958896438412**
+**Standard deviation:0.06854070704295089**
+
+

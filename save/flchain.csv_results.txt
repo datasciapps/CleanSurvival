@@ -4283,3 +4283,383 @@
 ('flchain.csv', 'Learn2Clean', 'COX', 'Mean -> RFE -> DBT -> MUO -> COX', 'C-Index', 0.6953166410935975, 20.524405479431152)
 ('flchain.csv', 'Learn2Clean', 'COX', 'Mean -> DBT -> MUO -> COX', 'C-Index', 0.6688659506207282, 38.43050456047058)
 ('flchain.csv', 'Learn2Clean', 'COX', 'Mean -> COX', 'C-Index', 0.6557101651911165, 75.09597301483154)
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5800508161773351)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5859836304426733)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6199044087908848)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5657406538395302**
+**Standard deviation:0.15793393028965097**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5732660562653048)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5859836304426733)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6199044087908848)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5652883365120616**
+**Standard deviation:0.15790201120148523**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5610069066351753)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5859836304426733)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6238488334679785)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5647340215151926**
+**Standard deviation:0.15798568948426114**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5681447552054312)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5711386373976923)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6238488334679785)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5642202118835442**
+**Standard deviation:0.15789773613876495**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5800508161773351)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5620635358833573)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6199044087908848)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5641459808689092**
+**Standard deviation:0.15784221940860324**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.546627607961023)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5834517662696181)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6238488334679785)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.563606610658712**
+**Standard deviation:0.15802655142185398**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.546627607961023)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.581674437151095)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6199044087908848)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5632251604056708**
+**Standard deviation:0.15791487465684206**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.546627607961023)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.553853979744687)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6238488334679785)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5616334248903833**
+**Standard deviation:0.15795120469977159**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5800508161773351)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5859836304426733)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6238488334679785)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5660036154846698**
+**Standard deviation:0.1580271508334236**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.546627607961023)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5834517662696181)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6238488334679785)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.563606610658712**
+**Standard deviation:0.15802655142185398**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5732660562653048)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5913029475815109)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6238488334679785)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5659059192997904**
+**Standard deviation:0.15804742689994303**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5843800643119693)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5859836304426733)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6199044087908848)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5660292703818393**
+**Standard deviation:0.15796377062162983**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.566672119582443)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.585985307424505)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6199044087908848)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5648488525319929**
+**Standard deviation:0.15788838255484564**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5610069066351753)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.553853979744687)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6308670679154389)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5630599270984908**
+**Standard deviation:0.15809195227437342**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5732660562653048)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.595551022912002)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6238488334679785)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5661891243218231**
+**Standard deviation:0.15809648051991568**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.546627607961023)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.553853979744687)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6199044087908848)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5613704632452436**
+**Standard deviation:0.15785065922351843**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5800508161773351)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5812053637613811)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6199044087908848)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5654221027274441**
+**Standard deviation:0.15789759383433544**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5610069066351753)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5953657788456623)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6199044087908848)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5650965364302521**
+**Standard deviation:0.15799286255794906**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.546627607961023)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5859836304426733)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6199044087908848)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5635124399584428**
+**Standard deviation:0.1579520916335428**
+
+
+('flchain.csv', 'optuna', 'COX', 'MI -> IG -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.620356062278435)
+('flchain.csv', 'optuna', 'COX', 'CCA -> UC -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.5630511576547331)
+('flchain.csv', 'optuna', 'COX', 'KNN -> RFE -> DBID -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.553853979744687)
+('flchain.csv', 'optuna', 'COX', 'Median -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5589181455814491)
+('flchain.csv', 'optuna', 'COX', 'MI -> RFE -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.48797342323692355)
+('flchain.csv', 'optuna', 'COX', 'KNN -> UC -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5801549759349002)
+('flchain.csv', 'optuna', 'COX', 'Mean -> IG -> DBID -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.5617836291162899)
+('flchain.csv', 'optuna', 'COX', 'Mean -> UC -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6563814787660031)
+('flchain.csv', 'optuna', 'COX', 'CCA -> IG -> ED -> MUO -> COX', 'C-Index', 'Quality Metric: ', 0.6238488334679785)
+('flchain.csv', 'optuna', 'COX', 'MI -> UC -> ED -> MR -> COX', 'C-Index', 'Quality Metric: ', 0)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'KNN -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Mean -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6450651401500197)
+('flchain.csv', 'optuna', 'COX', 'Median -> LASSO -> DBT -> MR -> COX', 'C-Index', 'Quality Metric: ', 0.6543426766679826)
+**Average score over 15 experiments is: 0.5627283282032973**
+**Standard deviation:0.1579003059353467**
+
+
