@@ -61,11 +61,11 @@ elif edit == 'D':
 
 # print(l2c.rewards)
 
-job = args.algo.upper()
+job = args.algo
 
-if job == "L":
+if job == "CleanSurvival":
     l2c.Learn2Clean()
-elif job == "R":
+elif job == "Random":
     repeat = int(args.algo_op)
     l2c.random_cleaning(dataset_name=file_name, loop=repeat)
 elif job == "O":
