@@ -828,7 +828,7 @@ class SurvivalQlearner:
 
         beta = 0.1 #1.
 
-        n_episodes = 1E3
+        n_episodes = 20 #1E3
 
         epsilon = 0.2 #0.05
 
@@ -1180,7 +1180,9 @@ class SurvivalQlearner:
         rr = ""
         average = 0
         obtained_scores = []
+        timestamps = []
         for repeat in range(loop):
+            start_t = time.time()
             random.seed(time.perf_counter())
 
             # Check if the dataset contains missing values
@@ -1277,6 +1279,7 @@ class SurvivalQlearner:
                 new_list.append(g+len(methods))
             dataset_copy = self.dataset.copy()
             p = self.construct_pipeline(dataset=dataset_copy, actions_list=new_list, time_col=self.time_col, event_col=self.event_col, check_missing=check_missing)
+            timestamps.append(time.time() - start_t)
             rr += str((dataset_name, "Random", goals[g], traverse_name, metrics_name[g], "Quality Metric: ", p[0]['quality_metric'])) + "\n"
             average += p[0]['quality_metric']
             obtained_scores.append(p[0]['quality_metric'])
@@ -1297,6 +1300,16 @@ class SurvivalQlearner:
                     mode='a+') as rr_file:
 
                 print("{}".format(rr), file=rr_file)
+
+        obtained_scores_copy = list(obtained_scores)
+        obtained_scores_copy.insert(0, "Best So Far")
+        obtained_scores_copy.insert(0, "Random")
+        timestamps.insert(0, "Timestamps")
+        timestamps.insert(0, "Random")
+        
+        with open(self.out_dir + '/'+dataset_name+'_timestamps.txt', mode='a+') as rr_file:
+            print("{}".format(obtained_scores_copy), file=rr_file)
+            print("{}".format(timestamps), file=rr_file)
 
         return p[1]
     
