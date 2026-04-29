@@ -36,7 +36,7 @@ event_column = args.event_col
 model = args.model.upper()
 metric = args.metric.lower()
 
-l2c = survival_ql.SurvivalQlearner(file_name=file_name, dataset=dataset, time_col=time_column, event_col=event_column, goal=model, json_path=json_path, threshold=0.6, metric=metric)
+l2c = survival_ql.SurvivalQlearner(file_name=file_name, dataset=dataset, time_col=time_column, event_col=event_column, goal=model, json_path=json_path, threshold=0.6, metric=metric, algorithm=args.algo)
 
 edit = args.load_mode.upper() if args.load_mode else ""
 if edit == 'T':

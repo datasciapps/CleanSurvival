@@ -84,7 +84,7 @@ def remove_adjacent(nums):
 
 class SurvivalQlearner:
 
-    def __init__(self, dataset, time_col, event_col, goal, verbose=False, json_path=None, file_name=None, threshold=None, metric="c-index"):
+    def __init__(self, dataset, time_col, event_col, goal, verbose=False, json_path=None, file_name=None, threshold=None, metric="c-index", algorithm="CleanSurvival"):
         """Initialize the SurvivalQlearner.
 
         Parameters:
@@ -97,6 +97,7 @@ class SurvivalQlearner:
         - file_name: Base name used when writing results to disk.
         - threshold: Optional threshold value (currently unused).
         - metric: Evaluation metric to use. Default 'c-index'.
+        - algorithm: string defining the current task (CleanSurvival, Random, O).
         """
 
         self.dataset = dataset
@@ -108,6 +109,16 @@ class SurvivalQlearner:
         self.goal = goal
 
         self.metric = metric
+
+        self.algorithm = algorithm
+        if self.algorithm == 'O':
+            self.out_dir = './results/optuna'
+        elif self.algorithm == 'Random':
+            self.out_dir = './results/random'
+        elif self.algorithm == 'CleanSurvival':
+            self.out_dir = './results/qlearning'
+        else:
+            self.out_dir = './results'
 
         self.json_path = json_path
 
@@ -494,7 +505,7 @@ class SurvivalQlearner:
                 if a == 10:
                     # Execute Random Survival Forest
                     print(f'\nIN RSF --------------------------------> {dataset}\n\n')
-                    import os; os.makedirs("./results", exist_ok=True); dataset.to_csv(f"./results/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
+                    import os; os.makedirs(self.out_dir, exist_ok=True); dataset.to_csv(f"{self.out_dir}/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
                     config = self.get_config_file("RSF")
                     rsf = L2C_class[a](dataset=dataset, time_column=time_col, target_goal=event_col, config=config, verbose=self.verbose, metric=self.metric)
                     survival_probabilities, c_index = rsf.fit_rsf_model()
@@ -506,7 +517,7 @@ class SurvivalQlearner:
                     print("\n\n\n\n\n\n\n")
                     print(dataset)
                     print("\n\n\n\n\n\n\n")
-                    import os; os.makedirs("./results", exist_ok=True); dataset.to_csv(f"./results/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_COX_cleaned.csv", index=False)
+                    import os; os.makedirs(self.out_dir, exist_ok=True); dataset.to_csv(f"{self.out_dir}/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_COX_cleaned.csv", index=False)
                     # TODO continue developing this file starting by adding "mode" parameter and then adjusting this part (cox) and then continue
                     config = self.get_config_file("CoxRegressor")
                     res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
@@ -520,7 +531,7 @@ class SurvivalQlearner:
 
                 if a == 12:
                     # Execute Neural Network
-                    import os; os.makedirs("./results", exist_ok=True); dataset.to_csv(f"./results/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
+                    import os; os.makedirs(self.out_dir, exist_ok=True); dataset.to_csv(f"{self.out_dir}/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
                     config = self.get_config_file("NeuralNetwork")
                     res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
                     nn = L2C_class[a](dataset = dataset, time_column = time_col, target_goal = event_col, config=config, verbose=self.verbose, metric=self.metric)
@@ -572,7 +583,7 @@ class SurvivalQlearner:
                     if a == 15:
                         # Execute Random Survival Forest
                         print(f'\nIN RSF --------------------------------> {dataset}\n\n')
-                        import os; os.makedirs("./results", exist_ok=True); dataset.to_csv(f"./results/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
+                        import os; os.makedirs(self.out_dir, exist_ok=True); dataset.to_csv(f"{self.out_dir}/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
                         config = self.get_config_file("RSF")
                         rsf = L2C_class[a](dataset=dataset, time_column=time_col, target_goal=event_col, config=config, verbose=self.verbose, metric=self.metric)
                         survival_probabilities, c_index = rsf.fit_rsf_model()
@@ -581,7 +592,7 @@ class SurvivalQlearner:
 
                     if a == 16:
                         # Execute Cox Model
-                        import os; os.makedirs("./results", exist_ok=True); dataset.to_csv(f"./results/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_COX_cleaned.csv", index=False)
+                        import os; os.makedirs(self.out_dir, exist_ok=True); dataset.to_csv(f"{self.out_dir}/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_COX_cleaned.csv", index=False)
                         config = self.get_config_file("CoxRegressor")
                         res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
                         cox_model = L2C_class[a](dataset=dataset, time_column=time_col, target_goal=event_col, config=config, verbose=self.verbose, metric=self.metric)
@@ -594,7 +605,7 @@ class SurvivalQlearner:
 
                     if a == 17:
                         # Execute Neural Network
-                        import os; os.makedirs("./results", exist_ok=True); dataset.to_csv(f"./results/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
+                        import os; os.makedirs(self.out_dir, exist_ok=True); dataset.to_csv(f"{self.out_dir}/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
                         config = self.get_config_file("NeuralNetwork")
                         res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
                         nn = L2C_class[a](dataset = dataset, time_column = time_col, target_goal = event_col, config=config, verbose=self.verbose, metric=self.metric)
@@ -1019,7 +1030,7 @@ class SurvivalQlearner:
         # Return information about the best strategy and its performance
         print(rr)
         
-        with open('./results/'+str(self.file_name)+'_results.txt',
+        with open(self.out_dir + '/'+str(self.file_name)+'_results.txt',
                   mode='a+') as rr_file:
 
             print("{}".format(rr), file=rr_file)
@@ -1028,7 +1039,7 @@ class SurvivalQlearner:
         best_overall.insert(0, "CleanSurv")
         timestamps.insert(0, "Timestamps")
         timestamps.insert(0, "CleanSurv")
-        with open('./results/'+str(self.file_name)+'_timestamps.txt', mode='a') as rr_file:
+        with open(self.out_dir + '/'+str(self.file_name)+'_timestamps.txt', mode='a') as rr_file:
             print("{}".format(best_overall), file=rr_file)
             print("{}".format(timestamps), file=rr_file)
 
@@ -1144,10 +1155,10 @@ class SurvivalQlearner:
         time_overall.insert(0, "Timestamps")
         time_overall.insert(0, "Optuna")
         
-        with open(os.path.join(os.path.dirname(__file__), '..', '..', 'results/') + str(self.file_name) + '_results.txt', mode='a+') as rr_file:
+        with open(self.out_dir + '/' + str(self.file_name) + '_results.txt', mode='a+') as rr_file:
             print("{}".format(rr), file=rr_file)
         
-        with open(os.path.join(os.path.dirname(__file__), '..', '..', 'results/') + str(self.file_name) + '_timestamps.txt', mode='a+') as rr_file:
+        with open(self.out_dir + '/' + str(self.file_name) + '_timestamps.txt', mode='a+') as rr_file:
             print("{}".format(best_overall), file=rr_file)
             print("{}".format(time_overall), file=rr_file)
 
@@ -1282,7 +1293,7 @@ class SurvivalQlearner:
 
         if p[1] is not None:
 
-            with open('./results/'+dataset_name+'_results.txt',
+            with open(self.out_dir + '/'+dataset_name+'_results.txt',
                     mode='a+') as rr_file:
 
                 print("{}".format(rr), file=rr_file)
@@ -1360,7 +1371,7 @@ class SurvivalQlearner:
             pipeline_counter += 1
         print(rr)
 
-        with open('./results/'+str(self.file_name)+'_results.txt',
+        with open(self.out_dir + '/'+str(self.file_name)+'_results.txt',
                   mode='a+') as rr_file:
             print("{}".format(rr), file=rr_file)
 
@@ -1408,7 +1419,7 @@ class SurvivalQlearner:
 
         if p[1] is not None:
 
-            with open('./results/'+dataset_name+'_results.txt',
+            with open(self.out_dir + '/'+dataset_name+'_results.txt',
                       mode='a') as rr_file:
 
                 print("{}".format(rr), file=rr_file)
@@ -1530,7 +1541,7 @@ class SurvivalQlearner:
             timestamps.insert(0, "Timestamps")
             timestamps.insert(0, "Grid_Search")
 
-            with open('./results/'+dataset_name+'_timestamps.txt', mode='a') as rr_file:
+            with open(self.out_dir + '/'+dataset_name+'_timestamps.txt', mode='a') as rr_file:
                 print("{}".format(results), file=rr_file)
                 print("{}".format(timestamps), file=rr_file)
 
