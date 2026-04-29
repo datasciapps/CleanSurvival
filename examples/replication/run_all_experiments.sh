@@ -15,16 +15,27 @@ fi
 echo "Using Python interpreter: $PYTHON"
 
 N_EPISODES="${N_EPISODES:-20}"
+ITERATIONS="${ITERATIONS:-20}"
 echo "Using Q-learning n_episodes: $N_EPISODES"
+echo "Using repeated runs per combo: $ITERATIONS"
 
 mkdir -p results/qlearning
 
-TOTAL=620
+METRICS=("c-index" "ibs")
+DATASETS=("rotterdam" "gbsg")
+MECHANISMS=("MNAR" "MAR" "MCAR")
+PCTS=(50 40 30 20 10)
+
+TOTAL=$(( (${#DATASETS[@]} * ${#MECHANISMS[@]} * ${#PCTS[@]} * ITERATIONS * ${#METRICS[@]}) + (ITERATIONS * ${#METRICS[@]}) ))
 CURRENT=1
 
-echo "=== Baseline: Optimize for C-Index ==="
+echo "=== Running CleanSurvival (priority ordered) ==="
 
-for dataset in "rotterdam" "gbsg"; do
+for metric in "${METRICS[@]}"; do
+    echo "=== Metric: $metric ==="
+    metric_tag="${metric//-/_}"
+
+    for dataset in "${DATASETS[@]}"; do
     if [ "$dataset" == "rotterdam" ]; then
         tc="dtime"
         ec="death"
@@ -33,16 +44,16 @@ for dataset in "rotterdam" "gbsg"; do
         ec="status"
     fi
 
-    for missing in "MCAR" "MAR" "MNAR"; do
-        for pct in 10 20 30 40 50; do
-            for iter in {1..20}; do
-                DONE_FILE="results/qlearning/.run_all_cindex_${dataset}_${pct}_${missing}_${iter}"
+    for missing in "${MECHANISMS[@]}"; do
+        for pct in "${PCTS[@]}"; do
+            for ((iter=1; iter<=ITERATIONS; iter++)); do
+                DONE_FILE="results/qlearning/.run_all_${metric_tag}_${dataset}_${pct}_${missing}_${iter}"
                 if [ -f "$DONE_FILE" ]; then
-                    echo "[$CURRENT/$TOTAL] Skipping $dataset $pct% $missing iteration $iter (already done)"
+                    echo "[$CURRENT/$TOTAL] Skipping $dataset $pct% $missing metric=$metric iteration $iter (already done)"
                     CURRENT=$((CURRENT+1))
                     continue
                 fi
-                echo "[$CURRENT/$TOTAL] -> Running $dataset $pct% $missing for C-Index iteration $iter"
+                echo "[$CURRENT/$TOTAL] -> Running $dataset $pct% $missing metric=$metric iteration $iter"
                 $PYTHON run.py \
                     -d cleansurvival/datasets/${dataset}_missing_${missing}/${dataset}_missing_${pct}_${missing}.csv \
                     -r config.json \
@@ -54,7 +65,7 @@ for dataset in "rotterdam" "gbsg"; do
                     -tc $tc \
                     -ec $ec \
                     -dc pid \
-                    -mt c-index > /dev/null 2>&1 || true
+                    -mt "$metric" > /dev/null 2>&1 || true
                 touch "$DONE_FILE"
                 CURRENT=$((CURRENT+1))
             done
@@ -62,13 +73,16 @@ for dataset in "rotterdam" "gbsg"; do
     done
 done
 
-echo "=== Running FLCHAIN ==="
-for iter in {1..20}; do
-    DONE_FILE_FLC="results/qlearning/.run_all_cindex_flchain_${iter}"
-    if [ -f "$DONE_FILE_FLC" ]; then
-        CURRENT=$((CURRENT+1))
-    else
-        echo "[$CURRENT/$TOTAL] -> Running flchain for C-Index iteration $iter"
+    echo "=== Running FLCHAIN metric=$metric ==="
+    for ((iter=1; iter<=ITERATIONS; iter++)); do
+        DONE_FILE_FLC="results/qlearning/.run_all_${metric_tag}_flchain_${iter}"
+        if [ -f "$DONE_FILE_FLC" ]; then
+            echo "[$CURRENT/$TOTAL] Skipping flchain metric=$metric iteration $iter (already done)"
+            CURRENT=$((CURRENT+1))
+            continue
+        fi
+
+        echo "[$CURRENT/$TOTAL] -> Running flchain metric=$metric iteration $iter"
         $PYTHON run.py \
             -d cleansurvival/datasets/flchain.csv \
             -r config.json \
@@ -80,10 +94,10 @@ for iter in {1..20}; do
             -tc futime \
             -ec death \
             -dc rownames \
-            -mt c-index > /dev/null 2>&1 || true
+            -mt "$metric" > /dev/null 2>&1 || true
         touch "$DONE_FILE_FLC"
         CURRENT=$((CURRENT+1))
-    fi
+    done
 done
 
 echo "Experiments execution fully completed."

@@ -17,10 +17,21 @@ echo "=== Running Optuna Baselines ==="
 
 mkdir -p results/optuna
 
-TOTAL=620
+ITERATIONS="${ITERATIONS:-20}"
+OPTUNA_TRIALS="${OPTUNA_TRIALS:-15}"
+METRICS=("c-index" "ibs")
+DATASETS=("rotterdam" "gbsg")
+MECHANISMS=("MNAR" "MAR" "MCAR")
+PCTS=(50 40 30 20 10)
+
+TOTAL=$(( (${#DATASETS[@]} * ${#MECHANISMS[@]} * ${#PCTS[@]} * ITERATIONS * ${#METRICS[@]}) + (ITERATIONS * ${#METRICS[@]}) ))
 CURRENT=1
 
-for dataset in "rotterdam" "gbsg"; do
+for metric in "${METRICS[@]}"; do
+    echo "=== Metric: $metric ==="
+    metric_tag="${metric//-/_}"
+
+for dataset in "${DATASETS[@]}"; do
     if [ "$dataset" == "rotterdam" ]; then
         tc="dtime"
         ec="death"
@@ -29,17 +40,17 @@ for dataset in "rotterdam" "gbsg"; do
         ec="status"
     fi
 
-    for missing in "MCAR" "MAR" "MNAR"; do
-        for pct in 10 20 30 40 50; do
-            echo "Running Optuna loops for stats generation for $dataset $pct% $missing (20 iterations)..."
-            for i in {1..20}; do
-                DONE_FILE="results/optuna/.optuna_done_${dataset}_${pct}_${missing}_${i}"
+    for missing in "${MECHANISMS[@]}"; do
+        for pct in "${PCTS[@]}"; do
+            echo "Running Optuna loops for stats generation for $dataset $pct% $missing metric=$metric ($ITERATIONS iterations)..."
+            for ((i=1; i<=ITERATIONS; i++)); do
+                DONE_FILE="results/optuna/.optuna_done_${metric_tag}_${dataset}_${pct}_${missing}_${i}"
                 if [ -f "$DONE_FILE" ]; then
-                    echo "[$CURRENT/$TOTAL] Skipping Optuna iteration $i/20 for $dataset $pct% $missing (already done)"
+                    echo "[$CURRENT/$TOTAL] Skipping Optuna iteration $i/$ITERATIONS for $dataset $pct% $missing metric=$metric (already done)"
                     CURRENT=$((CURRENT+1))
                     continue
                 fi
-                echo "[$CURRENT/$TOTAL] Optuna iteration $i/20 for $dataset $pct% $missing"
+                echo "[$CURRENT/$TOTAL] Optuna iteration $i/$ITERATIONS for $dataset $pct% $missing metric=$metric"
                 $PYTHON run.py \
                     -d cleansurvival/datasets/${dataset}_missing_${missing}/${dataset}_missing_${pct}_${missing}.csv \
                     -r config.json \
@@ -47,10 +58,11 @@ for dataset in "rotterdam" "gbsg"; do
                     -lm D \
                     -lf disable.txt \
                     -a O \
-                    -ao 15 \
+                    -ao "$OPTUNA_TRIALS" \
                     -tc $tc \
                     -ec $ec \
-                    -dc pid > /dev/null
+                    -dc pid \
+                    -mt "$metric" > /dev/null 2>&1 || true
                 touch "$DONE_FILE"
                 CURRENT=$((CURRENT+1))
             done
@@ -58,15 +70,15 @@ for dataset in "rotterdam" "gbsg"; do
     done
 done
 
-echo "Running Optuna loops for FLCHAIN (20 iterations)..."
-for i in {1..20}; do
-    DONE_FILE="results/optuna/.optuna_done_flchain_${i}"
+echo "Running Optuna loops for FLCHAIN metric=$metric ($ITERATIONS iterations)..."
+for ((i=1; i<=ITERATIONS; i++)); do
+    DONE_FILE="results/optuna/.optuna_done_${metric_tag}_flchain_${i}"
     if [ -f "$DONE_FILE" ]; then
-        echo "[$CURRENT/$TOTAL] Skipping Optuna iteration $i/20 for flchain (already done)"
+        echo "[$CURRENT/$TOTAL] Skipping Optuna iteration $i/$ITERATIONS for flchain metric=$metric (already done)"
         CURRENT=$((CURRENT+1))
         continue
     fi
-    echo "[$CURRENT/$TOTAL] Optuna iteration $i/20 for flchain"
+    echo "[$CURRENT/$TOTAL] Optuna iteration $i/$ITERATIONS for flchain metric=$metric"
     $PYTHON run.py \
         -d cleansurvival/datasets/flchain.csv \
         -r config.json \
@@ -74,12 +86,14 @@ for i in {1..20}; do
         -lm D \
         -lf disable.txt \
         -a O \
-        -ao 15 \
+        -ao "$OPTUNA_TRIALS" \
         -tc futime \
         -ec death \
-        -dc rownames > /dev/null
+        -dc rownames \
+        -mt "$metric" > /dev/null 2>&1 || true
     touch "$DONE_FILE"
     CURRENT=$((CURRENT+1))
+done
 done
 
 echo "Optuna iterations completed."

@@ -36,8 +36,10 @@ time_column = args.time_col
 event_column = args.event_col
 model = args.model.upper()
 metric = args.metric.lower()
+metric_tag = metric.replace('-', '_')
+file_name_with_metric = f"{file_name}_{metric_tag}"
 
-l2c = survival_ql.SurvivalQlearner(file_name=file_name, dataset=dataset, time_col=time_column, event_col=event_column, goal=model, json_path=json_path, threshold=0.6, metric=metric, algorithm=args.algo, n_episodes=args.n_episodes)
+l2c = survival_ql.SurvivalQlearner(file_name=file_name_with_metric, dataset=dataset, time_col=time_column, event_col=event_column, goal=model, json_path=json_path, threshold=0.6, metric=metric, algorithm=args.algo, n_episodes=args.n_episodes)
 
 edit = args.load_mode.upper() if args.load_mode else ""
 if edit == 'T':
@@ -68,10 +70,10 @@ if job == "CleanSurvival":
     l2c.Learn2Clean()
 elif job == "Random":
     repeat = int(args.algo_op)
-    l2c.random_cleaning(dataset_name=file_name, loop=repeat)
+    l2c.random_cleaning(dataset_name=file_name_with_metric, loop=repeat)
 elif job == "O":
     repeat = int(args.algo_op)
-    l2c.optuna_search(dataset_name=file_name, loop=repeat)
+    l2c.optuna_search(dataset_name=file_name_with_metric, loop=repeat)
 elif job == 'C':
     pipelines_file_path = args.algo_op
     pipelines = open(pipelines_file_path, 'r')

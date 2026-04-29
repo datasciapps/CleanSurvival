@@ -17,10 +17,16 @@ echo "=== Running Random Baselines ==="
 
 mkdir -p results/random
 
-TOTAL=620
+ITERATIONS="${ITERATIONS:-20}"
+RANDOM_TRIALS="${RANDOM_TRIALS:-15}"
+DATASETS=("rotterdam" "gbsg")
+MECHANISMS=("MNAR" "MAR" "MCAR")
+PCTS=(50 40 30 20 10)
+
+TOTAL=$(( (${#DATASETS[@]} * ${#MECHANISMS[@]} * ${#PCTS[@]} * ITERATIONS) + ITERATIONS ))
 CURRENT=1
 
-for dataset in "rotterdam" "gbsg"; do
+for dataset in "${DATASETS[@]}"; do
     if [ "$dataset" == "rotterdam" ]; then
         tc="dtime"
         ec="death"
@@ -29,17 +35,17 @@ for dataset in "rotterdam" "gbsg"; do
         ec="status"
     fi
 
-    for missing in "MCAR" "MAR" "MNAR"; do
-        for pct in 10 20 30 40 50; do
-            echo "Running Random loops for stats generation for $dataset $pct% $missing (20 iterations)..."
-            for i in {1..20}; do
+    for missing in "${MECHANISMS[@]}"; do
+        for pct in "${PCTS[@]}"; do
+            echo "Running Random loops for stats generation for $dataset $pct% $missing ($ITERATIONS iterations)..."
+            for ((i=1; i<=ITERATIONS; i++)); do
                 DONE_FILE="results/random/.random_done_${dataset}_${pct}_${missing}_${i}"
                 if [ -f "$DONE_FILE" ]; then
-                    echo "[$CURRENT/$TOTAL] Skipping Random iteration $i/20 for $dataset $pct% $missing (already done)"
+                    echo "[$CURRENT/$TOTAL] Skipping Random iteration $i/$ITERATIONS for $dataset $pct% $missing (already done)"
                     CURRENT=$((CURRENT+1))
                     continue
                 fi
-                echo "[$CURRENT/$TOTAL] Random iteration $i/20 for $dataset $pct% $missing"
+                echo "[$CURRENT/$TOTAL] Random iteration $i/$ITERATIONS for $dataset $pct% $missing"
                 $PYTHON run.py \
                     -d cleansurvival/datasets/${dataset}_missing_${missing}/${dataset}_missing_${pct}_${missing}.csv \
                     -r config.json \
@@ -47,10 +53,10 @@ for dataset in "rotterdam" "gbsg"; do
                     -lm D \
                     -lf disable.txt \
                     -a Random \
-                    -ao 15 \
+                    -ao "$RANDOM_TRIALS" \
                     -tc $tc \
                     -ec $ec \
-                    -dc pid > /dev/null
+                    -dc pid > /dev/null 2>&1 || true
                 touch "$DONE_FILE"
                 CURRENT=$((CURRENT+1))
             done
@@ -58,15 +64,15 @@ for dataset in "rotterdam" "gbsg"; do
     done
 done
 
-echo "Running Random loops for FLCHAIN (20 iterations)..."
-for i in {1..20}; do
+echo "Running Random loops for FLCHAIN ($ITERATIONS iterations)..."
+for ((i=1; i<=ITERATIONS; i++)); do
     DONE_FILE="results/random/.random_done_flchain_${i}"
     if [ -f "$DONE_FILE" ]; then
-        echo "[$CURRENT/$TOTAL] Skipping Random iteration $i/20 for flchain (already done)"
+        echo "[$CURRENT/$TOTAL] Skipping Random iteration $i/$ITERATIONS for flchain (already done)"
         CURRENT=$((CURRENT+1))
         continue
     fi
-    echo "[$CURRENT/$TOTAL] Random iteration $i/20 for flchain"
+    echo "[$CURRENT/$TOTAL] Random iteration $i/$ITERATIONS for flchain"
     $PYTHON run.py \
         -d cleansurvival/datasets/flchain.csv \
         -r config.json \
@@ -74,12 +80,12 @@ for i in {1..20}; do
         -lm D \
         -lf disable.txt \
         -a Random \
-        -ao 15 \
+        -ao "$RANDOM_TRIALS" \
         -tc futime \
         -ec death \
-        -dc rownames > /dev/null
+        -dc rownames > /dev/null 2>&1 || true
     touch "$DONE_FILE"
     CURRENT=$((CURRENT+1))
 done
 
-echo "Optuna iterations completed."
+echo "Random iterations completed."
