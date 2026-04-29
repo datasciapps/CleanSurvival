@@ -20,6 +20,7 @@ parser.add_argument('-tc', '--time_col', default='futime', help='Time column nam
 parser.add_argument('-ec', '--event_col', default='death', help='Event column name')
 parser.add_argument('-dc', '--drop_col', default='', help='Column name to drop')
 parser.add_argument('-mt', '--metric', default='c-index', help='Metric to optimize: c-index or ibs')
+parser.add_argument('-ne', '--n_episodes', type=int, default=1000, help='Number of Q-learning episodes for CleanSurvival (Learn2Clean)')
 
 args = parser.parse_args()
 
@@ -36,7 +37,7 @@ event_column = args.event_col
 model = args.model.upper()
 metric = args.metric.lower()
 
-l2c = survival_ql.SurvivalQlearner(file_name=file_name, dataset=dataset, time_col=time_column, event_col=event_column, goal=model, json_path=json_path, threshold=0.6, metric=metric, algorithm=args.algo)
+l2c = survival_ql.SurvivalQlearner(file_name=file_name, dataset=dataset, time_col=time_column, event_col=event_column, goal=model, json_path=json_path, threshold=0.6, metric=metric, algorithm=args.algo, n_episodes=args.n_episodes)
 
 edit = args.load_mode.upper() if args.load_mode else ""
 if edit == 'T':

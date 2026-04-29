@@ -14,6 +14,9 @@ fi
 
 echo "Using Python interpreter: $PYTHON"
 
+N_EPISODES="${N_EPISODES:-20}"
+echo "Using Q-learning n_episodes: $N_EPISODES"
+
 mkdir -p results/qlearning
 
 TOTAL=620
@@ -47,6 +50,7 @@ for dataset in "rotterdam" "gbsg"; do
                     -lm D \
                     -lf disable.txt \
                     -a CleanSurvival \
+                    -ne "$N_EPISODES" \
                     -tc $tc \
                     -ec $ec \
                     -dc pid \
@@ -72,6 +76,7 @@ for iter in {1..20}; do
             -lm D \
             -lf disable.txt \
             -a CleanSurvival \
+            -ne "$N_EPISODES" \
             -tc futime \
             -ec death \
             -dc rownames \

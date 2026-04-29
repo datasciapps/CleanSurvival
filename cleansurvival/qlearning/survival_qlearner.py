@@ -84,7 +84,7 @@ def remove_adjacent(nums):
 
 class SurvivalQlearner:
 
-    def __init__(self, dataset, time_col, event_col, goal, verbose=False, json_path=None, file_name=None, threshold=None, metric="c-index", algorithm="CleanSurvival"):
+    def __init__(self, dataset, time_col, event_col, goal, verbose=False, json_path=None, file_name=None, threshold=None, metric="c-index", algorithm="CleanSurvival", n_episodes=1000):
         """Initialize the SurvivalQlearner.
 
         Parameters:
@@ -98,6 +98,7 @@ class SurvivalQlearner:
         - threshold: Optional threshold value (currently unused).
         - metric: Evaluation metric to use. Default 'c-index'.
         - algorithm: string defining the current task (CleanSurvival, Random, O).
+        - n_episodes: Number of Q-learning training episodes used by Learn2Clean.
         """
 
         self.dataset = dataset
@@ -140,6 +141,8 @@ class SurvivalQlearner:
 
         self.threshold = threshold  #sds
 
+        self.n_episodes = int(n_episodes)
+
 
     def get_params(self, deep=True):
 
@@ -166,7 +169,9 @@ class SurvivalQlearner:
 
                 'file_name': self.file_name, # Store the 'file_name' parameter value.
 
-                'threshold': self.threshold  # Store the 'threshold' parameter value.
+                'threshold': self.threshold, # Store the 'threshold' parameter value.
+
+                'n_episodes': self.n_episodes  # Store the Q-learning training episodes.
 
                 }
 
@@ -828,7 +833,7 @@ class SurvivalQlearner:
 
         beta = 0.1 #1.
 
-        n_episodes = 20 #1E3
+        n_episodes = self.n_episodes
 
         epsilon = 0.2 #0.05
 
