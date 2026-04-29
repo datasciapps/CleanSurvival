@@ -22,40 +22,51 @@ from cleansurvival.regression.regressor import Regressor
 
 
 def update_q(q, r, state, next_state, action, beta, gamma, states_dict):
+    """Update a single Q-value using the Q-learning formula and renormalize the row.
 
-    # Update Q-value using the Q-learning formula
+    Q(s, a) = Q(s, a) + beta * [r(s, a) + gamma * max_a'(Q(s', a')) - Q(s, a)]
 
-    # Calculate the new Q-value for the current state-action pair
+    After the update, positive Q-values in the current state's row are renormalized
+    to sum to 1.
 
-    # q[state, action] represents the Q-value for the current state (state) and action (action) combination.
-    # new_q calculates the updated Q-value based on the Q-learning formula:
-    # Q(s, a) = Q(s, a) + learning_rate * [reward + discount_factor * max(Q(s', a')) - Q(s, a)]
-    # qsa represents the current Q-value for the state-action pair (state, action).
+    Parameters:
+    - q: The Q-value matrix (n_states x n_actions).
+    - r: The reward dictionary keyed by state name.
+    - state: Index of the current state.
+    - next_state: Index of the next state.
+    - action: Index of the action taken.
+    - beta: Learning rate.
+    - gamma: Discount factor.
+    - states_dict: Mapping from state index to state name.
 
+    Returns:
+    - The immediate reward r(state, action).
+    """
     action_name = states_dict[action]
     current_state_name = states_dict[state]
-    #print(f'Action name: {action_name} \n\nCurrent State Name: {current_state_name}\n\n')
-    rsa = r[current_state_name]['followed_by'][action_name] #r[state, action]
-    #print(rsa)
-    # rsa is the immediate reward obtained when taking the current action in the current state.
+    rsa = r[current_state_name]['followed_by'][action_name]
     qsa = q[state, action]
 
-    # Update the Q-value for the current state-action pair using the Q-learning formula.
     new_q = qsa + beta * (rsa + gamma * max(q[next_state, :]) - qsa)
-
-    # Update the Q-value matrix with the new Q-value for the current state-action pair.
-    # This line effectively replaces the old Q-value with the updated one.
     q[state, action] = new_q
+
     # renormalize row to be between 0 and 1
     rn = q[state][q[state] > 0] / np.sum(q[state][q[state] > 0])
 
     q[state][q[state] > 0] = rn
 
-    return r[current_state_name]['followed_by'][action_name] #r[state, action]
+    return r[current_state_name]['followed_by'][action_name]
 
 
 def remove_adjacent(nums):
+    """Remove consecutive duplicate elements from a list in-place.
 
+    Parameters:
+    - nums: A list from which adjacent duplicates will be removed.
+
+    Returns:
+    - nums: The modified list with adjacent duplicates removed.
+    """
     previous = ''
 
     for i in nums[:]:  # using the copy of nums
@@ -74,6 +85,19 @@ def remove_adjacent(nums):
 class SurvivalQlearner:
 
     def __init__(self, dataset, time_col, event_col, goal, verbose=False, json_path=None, file_name=None, threshold=None, metric="c-index"):
+        """Initialize the SurvivalQlearner.
+
+        Parameters:
+        - dataset: Input pandas DataFrame containing the survival data.
+        - time_col: Name of the column representing survival time.
+        - event_col: Name of the column representing the event indicator.
+        - goal: Target model to optimize ('RSF', 'COX', 'NN', 'OLS', 'LASSO_REG', 'MARS').
+        - verbose: If True, print detailed progress information. Default False.
+        - json_path: Optional path to a JSON config file for hyperparameter settings.
+        - file_name: Base name used when writing results to disk.
+        - threshold: Optional threshold value (currently unused).
+        - metric: Evaluation metric to use. Default 'c-index'.
+        """
 
         self.dataset = dataset
 
@@ -120,8 +144,6 @@ class SurvivalQlearner:
                                 The keys represent parameter names, and the values are their current values.
             """
 
-         # Create a dictionary 'params' to store the parameters of the QLearner instance.
-
         return {
                 'goal': self.goal,           # Store the 'goal' parameter value.
 
@@ -138,6 +160,12 @@ class SurvivalQlearner:
                 }
 
     def set_params(self, **params):
+        """Set parameters of the QLearner instance.
+
+        Parameters:
+        - **params: Keyword arguments corresponding to names returned by get_params().
+                    Invalid parameter names produce a warning.
+        """
 
         for k, v in params.items():
 
@@ -153,6 +181,13 @@ class SurvivalQlearner:
 
 
     def get_states_actions(self):
+        """Return the total number of states/actions in the reward graph.
+
+        Counts nodes with at least one outgoing edge, then adds one for the terminal state.
+
+        Returns:
+        - int: Number of states/actions.
+        """
         n = 0
         for key in self.rewards:
             if len(self.rewards[key]["followed_by"]) != 0:
@@ -161,6 +196,11 @@ class SurvivalQlearner:
     
     
     def get_imputers(self):
+        """Return the number of imputer methods in the reward graph.
+
+        Returns:
+        - int: Count of nodes with type 'Imputer'.
+        """
         imputer_no = 0
         for key in self.rewards:
             if self.rewards[key]['type'] == "Imputer":
@@ -169,6 +209,11 @@ class SurvivalQlearner:
     
 
     def get_methods(self):
+        """Return the names of all preprocessing methods (non-model nodes) in the reward graph.
+
+        Returns:
+        - list[str]: Method names excluding survival models and regression goals.
+        """
         methods = []
         for key in self.rewards:
             if self.rewards[key]['type'] not in ('Survival_Model', 'Regression'):
@@ -177,6 +222,11 @@ class SurvivalQlearner:
     
 
     def get_goals(self):
+        """Return the names of all goal nodes (survival models and regressors) in the reward graph.
+
+        Returns:
+        - list[str]: Goal names of type 'Survival_Model' or 'Regression'.
+        """
         goals = []
         for key in self.rewards:
             if self.rewards[key]['type'] in ('Survival_Model', 'Regression'):
@@ -185,6 +235,13 @@ class SurvivalQlearner:
 
 
     def edit_edge(self, u, v, weight):
+        """Add, update, or remove an edge in the reward graph.
+
+        Parameters:
+        - u: Source node name.
+        - v: Target node name.
+        - weight: Reward weight for the edge. Pass -1 to remove the edge.
+        """
         if weight == -1:
             self.rewards[u]['followed_by'].pop(v, None)
         else:
@@ -192,10 +249,23 @@ class SurvivalQlearner:
 
     
     def set_rewards(self, data):
+        """Replace the entire reward graph with the provided data.
+
+        Parameters:
+        - data: A dictionary in the same format as reward.json.
+        """
         self.rewards = data
 
 
     def disable(self, op):
+        """Remove a preprocessing operation and all its edges from the reward graph.
+
+        Accepts either a type name (e.g., 'Imputer') to remove all methods of that type,
+        or a specific method name (e.g., 'Median') to remove just that method.
+
+        Parameters:
+        - op: Operation type or method name to disable.
+        """
         ops_names = []
         for key in self.rewards:
             if self.rewards[key]['type'] == op:
@@ -268,9 +338,6 @@ class SurvivalQlearner:
         zeros_mat = [[0.0 for x in range(n_actions)] for y in range(n_states)]
         q = np.array(zeros_mat)
 
-        # we prevent the transition from any survival model during preprocessing
-        # r = r[~np.all(r == -1, axis=1)]
-
         # Print the reward matrix if verbose mode is enabled
         if self.verbose:
 
@@ -283,6 +350,14 @@ class SurvivalQlearner:
     
 
     def get_config_file(self, class_name):
+        """Retrieve the hyperparameter configuration for a given class from the JSON config file.
+
+        Parameters:
+        - class_name: Name of the class to look up (e.g., 'RSF', 'CoxRegressor').
+
+        Returns:
+        - dict or None: Configuration dictionary if found, None otherwise.
+        """
         config = None
         if self.json_path is not None:
             if class_name in self.json_file.keys():
@@ -291,7 +366,14 @@ class SurvivalQlearner:
     
 
     def handle_categorical(self, dataset):
+        """Ordinally encode all non-numeric columns in the dataset, preserving NaN values.
 
+        Parameters:
+        - dataset: Input pandas DataFrame.
+
+        Returns:
+        - tuple: (encoded DataFrame, dict mapping column names to their OrdinalEncoder instances).
+        """
         from sklearn.preprocessing import OrdinalEncoder
         from pandas.api.types import is_numeric_dtype
 
@@ -333,9 +415,6 @@ class SurvivalQlearner:
         - res: Reserved for potential future use (currently set to None).
         - t: The CPU time taken to complete the data preprocessing pipeline.
         """
-
-        # Create a copy of the input dataset
-        #dataset = dataset.copy()
 
         # Define names of goals (used when executing survival models)
         goals_name = self.get_goals() #["RSF", "COX", "NN", "OLS", "LASSO_REG", "MARS"]
@@ -415,7 +494,7 @@ class SurvivalQlearner:
                 if a == 10:
                     # Execute Random Survival Forest
                     print(f'\nIN RSF --------------------------------> {dataset}\n\n')
-                    import os; os.makedirs("./save/rotterdam_cox_L", exist_ok=True); dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
+                    import os; os.makedirs("./results", exist_ok=True); dataset.to_csv(f"./results/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
                     config = self.get_config_file("RSF")
                     rsf = L2C_class[a](dataset=dataset, time_column=time_col, target_goal=event_col, config=config, verbose=self.verbose, metric=self.metric)
                     survival_probabilities, c_index = rsf.fit_rsf_model()
@@ -427,7 +506,7 @@ class SurvivalQlearner:
                     print("\n\n\n\n\n\n\n")
                     print(dataset)
                     print("\n\n\n\n\n\n\n")
-                    import os; os.makedirs("./save/rotterdam_cox_L", exist_ok=True); dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_COX_cleaned.csv", index=False)
+                    import os; os.makedirs("./results", exist_ok=True); dataset.to_csv(f"./results/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_COX_cleaned.csv", index=False)
                     # TODO continue developing this file starting by adding "mode" parameter and then adjusting this part (cox) and then continue
                     config = self.get_config_file("CoxRegressor")
                     res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
@@ -441,7 +520,7 @@ class SurvivalQlearner:
 
                 if a == 12:
                     # Execute Neural Network
-                    import os; os.makedirs("./save/rotterdam_cox_L", exist_ok=True); dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
+                    import os; os.makedirs("./results", exist_ok=True); dataset.to_csv(f"./results/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
                     config = self.get_config_file("NeuralNetwork")
                     res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
                     nn = L2C_class[a](dataset = dataset, time_column = time_col, target_goal = event_col, config=config, verbose=self.verbose, metric=self.metric)
@@ -493,7 +572,7 @@ class SurvivalQlearner:
                     if a == 15:
                         # Execute Random Survival Forest
                         print(f'\nIN RSF --------------------------------> {dataset}\n\n')
-                        import os; os.makedirs("./save/rotterdam_cox_L", exist_ok=True); dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
+                        import os; os.makedirs("./results", exist_ok=True); dataset.to_csv(f"./results/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
                         config = self.get_config_file("RSF")
                         rsf = L2C_class[a](dataset=dataset, time_column=time_col, target_goal=event_col, config=config, verbose=self.verbose, metric=self.metric)
                         survival_probabilities, c_index = rsf.fit_rsf_model()
@@ -502,7 +581,7 @@ class SurvivalQlearner:
 
                     if a == 16:
                         # Execute Cox Model
-                        import os; os.makedirs("./save/rotterdam_cox_L", exist_ok=True); dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_COX_cleaned.csv", index=False)
+                        import os; os.makedirs("./results", exist_ok=True); dataset.to_csv(f"./results/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_COX_cleaned.csv", index=False)
                         config = self.get_config_file("CoxRegressor")
                         res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
                         cox_model = L2C_class[a](dataset=dataset, time_column=time_col, target_goal=event_col, config=config, verbose=self.verbose, metric=self.metric)
@@ -515,7 +594,7 @@ class SurvivalQlearner:
 
                     if a == 17:
                         # Execute Neural Network
-                        import os; os.makedirs("./save/rotterdam_cox_L", exist_ok=True); dataset.to_csv(f"./save/rotterdam_cox_L/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
+                        import os; os.makedirs("./results", exist_ok=True); dataset.to_csv(f"./results/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
                         config = self.get_config_file("NeuralNetwork")
                         res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
                         nn = L2C_class[a](dataset = dataset, time_column = time_col, target_goal = event_col, config=config, verbose=self.verbose, metric=self.metric)
@@ -590,8 +669,6 @@ class SurvivalQlearner:
             current_state = i
 
             current_state_name = methods[i]
-            # traverse = "%i -> " % current_state
-
             traverse_name = "%s -> " % current_state_name
 
             n_steps = 0
@@ -605,8 +682,6 @@ class SurvivalQlearner:
                 current_state = next_state
 
                 current_state_name = methods[next_state]
-                # traverse += "%i -> " % current_state
-
                 traverse_name += "%s -> " % current_state_name
 
                 actions_list.append(next_state)
@@ -695,9 +770,6 @@ class SurvivalQlearner:
             print(f'temp_val pipeline \n {temp_val}')
             strategy.append(temp_val[0])
             final_dataset = temp_val[1]
-
-        # Execute the preprocessing pipeline for the final strategy (goal) and store the quality metric TODO: do not know if needed
-        #strategy.append(self.construct_pipeline(final_dataset, [g+len(methods)-1], self.time_col, self.event_col, check_missing)[1])
 
         print()
 
@@ -791,8 +863,7 @@ class SurvivalQlearner:
 
             while (not goal) and (current_state != n_states-1):
 
-                #print("HEREEEEEE")
-                 # Implement epsilon-greedy exploration strategy to select actions
+                # Epsilon-greedy exploration strategy to select actions
                 valid = r_mat[states_dict[current_state]]['followed_by']
 
                 temp = [] #r[current_state] >= 0
@@ -937,18 +1008,18 @@ class SurvivalQlearner:
 
         if result_l is not None:
 
-            rr = (self.file_name, "Learn2Clean", goals[g], result_list[0][result_l], metrics_name[g], result, t)
+            rr = (self.file_name, "CleanSurvival", goals[g], result_list[0][result_l], metrics_name[g], result, t)
 
         else:
 
-            rr = (self.file_name, "Learn2Clean", goals[g], None, metrics_name[g], result, t)
+            rr = (self.file_name, "CleanSurvival", goals[g], None, metrics_name[g], result, t)
 
         print("**** Best strategy ****")
 
         # Return information about the best strategy and its performance
         print(rr)
         
-        with open('./save/rotterdam_cox_L/'+str(self.file_name)+'_results.txt',
+        with open('./results/'+str(self.file_name)+'_results.txt',
                   mode='a+') as rr_file:
 
             print("{}".format(rr), file=rr_file)
@@ -957,7 +1028,7 @@ class SurvivalQlearner:
         best_overall.insert(0, "CleanSurv")
         timestamps.insert(0, "Timestamps")
         timestamps.insert(0, "CleanSurv")
-        with open('./save/rotterdam_cox_L/'+str(self.file_name)+'_timestamps.txt', mode='a') as rr_file:
+        with open('./results/'+str(self.file_name)+'_timestamps.txt', mode='a') as rr_file:
             print("{}".format(best_overall), file=rr_file)
             print("{}".format(timestamps), file=rr_file)
 
@@ -1040,7 +1111,7 @@ class SurvivalQlearner:
                 score = 0
             
             nonlocal rr
-            rr += str((dataset_name, "optuna", goals[g], traverse_name, metrics_name[g], "Quality Metric: ", score)) + "\n"
+            rr += str((dataset_name, "Optuna", goals[g], traverse_name, metrics_name[g], "Quality Metric: ", score)) + "\n"
             obtained_scores.append(score)
             
             # record time and best
@@ -1073,10 +1144,10 @@ class SurvivalQlearner:
         time_overall.insert(0, "Timestamps")
         time_overall.insert(0, "Optuna")
         
-        with open(os.path.join(os.path.dirname(__file__), '..', '..', 'save/') + str(self.file_name) + '_results.txt', mode='a+') as rr_file:
+        with open(os.path.join(os.path.dirname(__file__), '..', '..', 'results/') + str(self.file_name) + '_results.txt', mode='a+') as rr_file:
             print("{}".format(rr), file=rr_file)
         
-        with open(os.path.join(os.path.dirname(__file__), '..', '..', 'save/') + str(self.file_name) + '_timestamps.txt', mode='a+') as rr_file:
+        with open(os.path.join(os.path.dirname(__file__), '..', '..', 'results/') + str(self.file_name) + '_timestamps.txt', mode='a+') as rr_file:
             print("{}".format(best_overall), file=rr_file)
             print("{}".format(time_overall), file=rr_file)
 
@@ -1195,7 +1266,7 @@ class SurvivalQlearner:
                 new_list.append(g+len(methods))
             dataset_copy = self.dataset.copy()
             p = self.construct_pipeline(dataset=dataset_copy, actions_list=new_list, time_col=self.time_col, event_col=self.event_col, check_missing=check_missing)
-            rr += str((dataset_name, "random", goals[g], traverse_name, metrics_name[g], "Quality Metric: ", p[0]['quality_metric'])) + "\n"
+            rr += str((dataset_name, "Random", goals[g], traverse_name, metrics_name[g], "Quality Metric: ", p[0]['quality_metric'])) + "\n"
             average += p[0]['quality_metric']
             obtained_scores.append(p[0]['quality_metric'])
         mean = average / loop
@@ -1211,7 +1282,7 @@ class SurvivalQlearner:
 
         if p[1] is not None:
 
-            with open('./save/rotterdam_cox_L/'+dataset_name+'_results.txt',
+            with open('./results/'+dataset_name+'_results.txt',
                     mode='a+') as rr_file:
 
                 print("{}".format(rr), file=rr_file)
@@ -1220,7 +1291,17 @@ class SurvivalQlearner:
     
 
     def custom_pipeline(self, pipelines_file, model_name, dataset_name="None"):
-        
+        """Execute one or more user-specified preprocessing pipelines and record results.
+
+        Parameters:
+        - pipelines_file: An iterable of strings, each describing a pipeline as
+          space-separated method names (e.g., ['Mean UC DBID MR']).
+        - model_name: Survival model to use ('RSF', 'COX', 'NN').
+        - dataset_name: Dataset identifier used for output file naming. Default 'None'.
+
+        Returns:
+        - p: Result tuple from the last pipeline executed via construct_pipeline.
+        """
         pipeline_counter = 0
         rr = ""
 
@@ -1256,9 +1337,7 @@ class SurvivalQlearner:
                 action_list.append(m)
 
             traverse_name += model_name
-            action_list.append(g+len(methods)) 
-            #check_missing = self.dataset.isnull().sum().sum() > 0
-
+            action_list.append(g+len(methods))
             check_missing = missing
 
             print()
@@ -1281,7 +1360,7 @@ class SurvivalQlearner:
             pipeline_counter += 1
         print(rr)
 
-        with open('./save/rotterdam_cox_L/'+str(self.file_name)+'_results.txt',
+        with open('./results/'+str(self.file_name)+'_results.txt',
                   mode='a+') as rr_file:
             print("{}".format(rr), file=rr_file)
 
@@ -1290,6 +1369,14 @@ class SurvivalQlearner:
     
 
     def no_prep(self, dataset_name='None'):
+        """Run the survival model with no preprocessing as a baseline.
+
+        If missing values are present, they are dropped via CCA before fitting.
+        Categorical columns are ordinally encoded.
+
+        Parameters:
+        - dataset_name: Dataset identifier used for output file naming. Default 'None'.
+        """
 
         goals = ["RSF", "COX", "NN"]
 
@@ -1321,7 +1408,7 @@ class SurvivalQlearner:
 
         if p[1] is not None:
 
-            with open('./save/rotterdam_cox_L/'+dataset_name+'_results.txt',
+            with open('./results/'+dataset_name+'_results.txt',
                       mode='a') as rr_file:
 
                 print("{}".format(rr), file=rr_file)
@@ -1329,6 +1416,11 @@ class SurvivalQlearner:
 
     
     def get_imputers(self):
+        """Return the names of all imputer methods in the reward graph.
+
+        Returns:
+        - list[str]: Method names with type 'Imputer'.
+        """
         imputers = []
         for method in self.rewards:
             if self.rewards[method]['type'] == 'Imputer':
@@ -1337,6 +1429,20 @@ class SurvivalQlearner:
     
 
     def generate_pipeline(self, current_step, pipeline, imputers):
+        """Recursively build and execute all valid pipelines starting from a given step.
+
+        Traverses the reward graph depth-first. When a terminal node (the goal or a leaf)
+        is reached, prepends a randomly selected imputer and runs the pipeline via
+        custom_pipeline.
+
+        Parameters:
+        - current_step: Name of the current preprocessing step.
+        - pipeline: List of steps accumulated so far (passed by value via .copy()).
+        - imputers: List of imputer method names to choose from.
+
+        Returns:
+        - The result of custom_pipeline for terminal paths, None for intermediate nodes.
+        """
         pipeline.append(current_step)
         if current_step == self.goal or len(self.rewards[current_step]['followed_by']) == 0:
             pipeline.pop()
@@ -1352,91 +1458,21 @@ class SurvivalQlearner:
             next_steps = self.rewards[current_step]['followed_by']
             for next_step, reward in next_steps.items():
                 if next_step not in pipeline:
-                    # if len(pipeline) != 0 and self.rewards[pipeline[-1]]['type'] == self.rewards[next_step]['type']:
-                    #     continue
                     self.generate_pipeline(next_step, pipeline.copy(), imputers)
-
-    
-    # def grid_search(self, dataset_name='None'):
-    #     start_time = time.time()
-    #     timestamps = []
-    #     best_so_far = -1.0
-    #     imputers = self.get_imputers()
-    #     for start in self.rewards:
-    #         ans = self.generate_pipeline(start, [], imputers)
-    #         best_so_far = max(best_so_far, ans[0]['quality_metric'])
-    #         timestamps.append((best_so_far, time.time() - start_time))
-    #         time_dif = time.time() - start_time
-    #         if time_dif >= 300:
-    #             time_in_mins = time_dif / 60
-    #             print()
-    #             print(f"Time Limit of {time_in_mins} mins have been reached!")
-    #             print()
-    #             break
-    #     else:
-    #         print()
-    #         print(f"Grid Search completed in {(time.time() - start_time) / 60} mins")
-    #         print()
-    #     with open(os.path.join(os.path.dirname(__file__), '..', '..', 'save/')+dataset_name+'_results.txt', mode='a') as rr_file:
-    #          print("{}".format(timestamps), file=rr_file)
-
-    
-
-    # def grid_search(self, dataset_name='None'):
-    #     imputers, feature_selectors, duplicate_detectors, outlier_detectors = [], [], [], []
-
-    #     for method in self.rewards:
-    #         if method == "CR":
-    #             continue
-    #         method_type = self.rewards[method]['type']
-    #         if method_type == 'Imputer':
-    #             imputers.append(method)
-    #         elif method_type == 'Feature_selector':
-    #             feature_selectors.append(method)
-    #         elif method_type == 'Duplicate_detector':
-    #             duplicate_detectors.append(method)
-    #         elif method_type == 'Outlier_detector':
-    #             outlier_detectors.append(method)
-
-    #     random.shuffle(imputers)
-    #     start_time = time.time()
-    #     results = []
-    #     timestamps = []
-    #     timeout = False
-    #     best_so_far = 0
-    #     for i in imputers:
-    #         for j in feature_selectors:
-    #             for k in duplicate_detectors:
-    #                 for z in outlier_detectors:
-    #                     string = i + " " + j + " " + k + " " + z
-    #                     pipeline = [string]
-    #                     res = self.custom_pipeline(pipeline, self.goal)[0]['quality_metric']
-    #                     best_so_far = max(best_so_far, res)
-    #                     time_dif = time.time() - start_time
-    #                     results.append(best_so_far)
-    #                     timestamps.append(time_dif)
-    #                     if time_dif >= 300:
-    #                         timeout = True
-    #                         print()
-    #                         print(f"Time limit for Grid Search reached in {time_dif / 60} mins")
-    #                         break
-    #                 if timeout:
-    #                     break
-    #             if timeout:
-    #                 break
-    #         if timeout:
-    #             break
-    #     else:
-    #         print()
-    #         print(f'Grid Search Completed in {(time.time() - start_time) / 60} mins')
-
-    #     with open(os.path.join(os.path.dirname(__file__), '..', '..', 'save/')+dataset_name+'_results.txt', mode='a') as rr_file:
-    #         print("{}".format(results), file=rr_file)
-    #         print("{}".format(timestamps), file=rr_file)
-
 
 
     def grid_search(self, dataset_name='None', trials=1):
+        """Exhaustively search all combinations of preprocessing methods as a baseline.
+
+        For each trial, the order of method groups (feature selection, duplicate detection,
+        outlier detection) is randomized while imputation is always applied first. Search
+        stops early if the 10-minute time limit is reached. Results and timestamps are
+        appended to files in the results directory.
+
+        Parameters:
+        - dataset_name: Dataset identifier used for output file naming. Default 'None'.
+        - trials: Number of independent trials with reshuffled method orderings. Default 1.
+        """
         imputers, feature_selectors, duplicate_detectors, outlier_detectors = [], [], [], []
 
         for method in self.rewards:
@@ -1494,7 +1530,7 @@ class SurvivalQlearner:
             timestamps.insert(0, "Timestamps")
             timestamps.insert(0, "Grid_Search")
 
-            with open('./save/rotterdam_cox_L/'+dataset_name+'_timestamps.txt', mode='a') as rr_file:
+            with open('./results/'+dataset_name+'_timestamps.txt', mode='a') as rr_file:
                 print("{}".format(results), file=rr_file)
                 print("{}".format(timestamps), file=rr_file)
 
