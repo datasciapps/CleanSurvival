@@ -30,6 +30,11 @@ json_path = args.rewards
 dataset = pd.read_csv(path)
 
 if args.drop_col and args.drop_col in dataset.columns:
+    if args.drop_col in {args.time_col, args.event_col}:
+        raise ValueError(
+            f"Refusing to drop required survival column '{args.drop_col}'. "
+            f"time_col={args.time_col}, event_col={args.event_col}"
+        )
     dataset.drop(args.drop_col, axis=1, inplace=True)
 
 time_column = args.time_col

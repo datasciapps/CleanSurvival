@@ -145,6 +145,19 @@ class SurvivalQlearner:
 
         self.n_episodes = int(n_episodes)
 
+    def _assert_required_survival_columns(self, dataset, stage="pipeline"):
+        """Ensure survival target columns are preserved throughout preprocessing.
+
+        Raises:
+        - ValueError: If either the time or event column is missing.
+        """
+        missing = [c for c in (self.time_col, self.event_col) if c not in dataset.columns]
+        if missing:
+            raise ValueError(
+                f"Missing required survival columns at {stage}: {missing}. "
+                f"Current columns={list(dataset.columns)}"
+            )
+
 
     def get_params(self, deep=True):
 
@@ -481,6 +494,8 @@ class SurvivalQlearner:
 
         n = None
 
+        self._assert_required_survival_columns(dataset, stage="pipeline_start")
+
         for a in actions_list:
 
             if not check_missing:
@@ -496,6 +511,7 @@ class SurvivalQlearner:
                             config = self.get_config_file("Duplicate_detector")
                     
                     dataset = L2C_class[a](dataset = dataset, time_col = time_col, event_col = event_col, strategy = actions_name[a], config=config, verbose=self.verbose, metric=self.metric).transform()
+                    self._assert_required_survival_columns(dataset, stage=f"transform_action_{a}")
 
                 if a in (7, 8, 9):
                     # Execute outlier detectors (7-9) based on the action index.
@@ -506,11 +522,13 @@ class SurvivalQlearner:
                     print(dataset)
                     print("\n\n\n\n\n\n\n")
                     dataset = L2C_class[a](dataset = dataset, time_col = time_col, event_col = event_col, strategy = actions_name[a], verbose = self.verbose).transform()
+                    self._assert_required_survival_columns(dataset, stage=f"transform_action_{a}")
                     print(f"IN OUTLIER CALL: \n\n\n\n\n\n\n")
                     print(dataset)
                     print("\n\n\n\n\n\n\n")
                 if a == 10:
                     # Execute Random Survival Forest
+                    self._assert_required_survival_columns(dataset, stage="before_rsf")
                     print(f'\nIN RSF --------------------------------> {dataset}\n\n')
                     import os; os.makedirs(self.out_dir, exist_ok=True); dataset.to_csv(f"{self.out_dir}/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
                     config = self.get_config_file("RSF")
@@ -521,6 +539,7 @@ class SurvivalQlearner:
                 
                 if a == 11:
                     # Execute Cox Model
+                    self._assert_required_survival_columns(dataset, stage="before_cox")
                     print("\n\n\n\n\n\n\n")
                     print(dataset)
                     print("\n\n\n\n\n\n\n")
@@ -538,6 +557,7 @@ class SurvivalQlearner:
 
                 if a == 12:
                     # Execute Neural Network
+                    self._assert_required_survival_columns(dataset, stage="before_nn")
                     import os; os.makedirs(self.out_dir, exist_ok=True); dataset.to_csv(f"{self.out_dir}/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
                     config = self.get_config_file("NeuralNetwork")
                     res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
@@ -568,27 +588,32 @@ class SurvivalQlearner:
 
                         config = self.get_config_file("Imputer")
                         dataset = L2C_class[a](dataset = dataset, time_col = time_col, event_col = event_col, config=config, strategy = actions_name[a], verbose = self.verbose).transform()
+                        self._assert_required_survival_columns(dataset, stage=f"transform_action_{a}")
                         #print("HANDLING MISSING VALUES: " + str(len(n)))
                     if a in (5, 6, 7, 8):
                         # Execute Feature selection methods (5-8) based on the action index.
 
                         config = self.get_config_file("Feature_selector")
                         dataset = L2C_class[a](dataset = dataset, time_col = time_col, event_col = event_col, config=config, strategy = actions_name[a], verbose = self.verbose).transform()
+                        self._assert_required_survival_columns(dataset, stage=f"transform_action_{a}")
 
                     if a in (9, 10, 11):
                         # Execute deduplication methods (9-11) based on the action index.
 
                         config = self.get_config_file("Duplicate_detector")
                         dataset = L2C_class[a](dataset = dataset, time_col = time_col, event_col = event_col, config=config, strategy = actions_name[a], verbose = self.verbose).transform()
+                        self._assert_required_survival_columns(dataset, stage=f"transform_action_{a}")
 
                     if a in (12, 13, 14):
                         # Execute outlier detection methods (12-14) based on the action index.
 
                         config = self.get_config_file("Outlier_detector")
                         dataset = L2C_class[a](dataset = dataset, time_col = time_col, event_col = event_col, config=config, strategy = actions_name[a], verbose = self.verbose).transform()
+                        self._assert_required_survival_columns(dataset, stage=f"transform_action_{a}")
 
                     if a == 15:
                         # Execute Random Survival Forest
+                        self._assert_required_survival_columns(dataset, stage="before_rsf")
                         print(f'\nIN RSF --------------------------------> {dataset}\n\n')
                         import os; os.makedirs(self.out_dir, exist_ok=True); dataset.to_csv(f"{self.out_dir}/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_RSF_cleaned.csv", index=False)
                         config = self.get_config_file("RSF")
@@ -599,6 +624,7 @@ class SurvivalQlearner:
 
                     if a == 16:
                         # Execute Cox Model
+                        self._assert_required_survival_columns(dataset, stage="before_cox")
                         import os; os.makedirs(self.out_dir, exist_ok=True); dataset.to_csv(f"{self.out_dir}/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_COX_cleaned.csv", index=False)
                         config = self.get_config_file("CoxRegressor")
                         res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
@@ -612,6 +638,7 @@ class SurvivalQlearner:
 
                     if a == 17:
                         # Execute Neural Network
+                        self._assert_required_survival_columns(dataset, stage="before_nn")
                         import os; os.makedirs(self.out_dir, exist_ok=True); dataset.to_csv(f"{self.out_dir}/{self.file_name}_pipeline_{'_'.join(str(x) for x in actions_list)}_NN_cleaned.csv", index=False)
                         config = self.get_config_file("NeuralNetwork")
                         res = dataset # taking the final dataset after cleaning as a result # TODO check if needed in the unnecessary final call in show_traverse
@@ -1189,8 +1216,7 @@ class SurvivalQlearner:
 
         check_missing = self.dataset.isnull().sum().sum() > 0
         rr = ""
-        average = 0
-        obtained_scores = []
+        successful_scores = []
         timestamps = []
 
         if not check_missing:
@@ -1206,11 +1232,11 @@ class SurvivalQlearner:
         g = goals.index(self.goal)
 
         def _run_one_repeat(repeat_index):
-            start_t = time.time()
+            start_t = time.perf_counter()
             rng = random.Random(time.perf_counter() + repeat_index)
 
             p_result = ({'quality_metric': 0}, None, 0)
-            score = 0
+            score = None
             traverse_name = ""
             last_error = None
 
@@ -1278,45 +1304,61 @@ class SurvivalQlearner:
                         check_missing=check_missing
                     )
                     score = p_result[0]['quality_metric']
+                    if not isinstance(score, (int, float, np.number)):
+                        raise ValueError(f"Invalid score type: {type(score)}")
+                    score = float(score)
+                    if not np.isfinite(score):
+                        raise ValueError(f"Non-finite score: {score}")
                     break
                 except Exception as e:
                     last_error = e
 
-            if last_error is not None and score == 0:
+            if last_error is not None and score is None:
                 print(f"Random cleaning pipeline failed on repeat {repeat_index} after retries: {last_error}")
 
-            elapsed = time.time() - start_t
+            elapsed = time.perf_counter() - start_t
+            if score is None:
+                return None
+
             result_line = str((dataset_name, "Random", goals[g], traverse_name, metrics_name[g], "Quality Metric: ", score)) + "\n"
             return p_result, score, elapsed, result_line
 
         max_workers = max(1, min(loop, os.cpu_count() or 1))
-        p = ({'quality_metric': 0}, None, 0)
+        p = None
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            for p, score, elapsed, result_line in executor.map(_run_one_repeat, range(loop)):
+            for run_outcome in executor.map(_run_one_repeat, range(loop)):
+                if run_outcome is None:
+                    continue
+                p, score, elapsed, result_line = run_outcome
                 timestamps.append(elapsed)
                 rr += result_line
-                average += score
-                obtained_scores.append(score)
+                successful_scores.append(score)
 
-        mean = average / loop
-        for i in  range(len(obtained_scores)):
-            obtained_scores[i] -= mean
-            obtained_scores[i] = obtained_scores[i] ** 2
-        standard_deviation = (sum(obtained_scores) / len(obtained_scores)) ** (1.0 / 2.0)
+        if not successful_scores:
+            print(f"No successful Random cleaning runs for {dataset_name}. Skipping trace write.")
+            return None
+
+        mean = float(np.mean(successful_scores))
+        standard_deviation = float(np.std(successful_scores, ddof=0))
         print(rr)
-        print(f"**Average score over {loop} experiments is: {average/loop}**")
+        print(f"**Average score over {len(successful_scores)} successful experiments is: {mean}**")
         print(f"**Standard deviation:{standard_deviation}**")
-        average_score_str = f"**Average score over {loop} experiments is: {average/loop}**\n**Standard deviation:{standard_deviation}**\n\n"
+        average_score_str = (
+            f"**Average score over {len(successful_scores)} successful experiments is: {mean}**\n"
+            f"**Standard deviation:{standard_deviation}**\n\n"
+        )
         rr += average_score_str
 
-        if p[1] is not None:
+        with open(self.out_dir + '/'+dataset_name+'_results.txt', mode='a+') as rr_file:
+            print("{}".format(rr), file=rr_file)
 
-            with open(self.out_dir + '/'+dataset_name+'_results.txt',
-                    mode='a+') as rr_file:
+        best_so_far = []
+        best = -np.inf
+        for score in successful_scores:
+            best = max(best, score)
+            best_so_far.append(best)
 
-                print("{}".format(rr), file=rr_file)
-
-        obtained_scores_copy = list(obtained_scores)
+        obtained_scores_copy = list(best_so_far)
         obtained_scores_copy.insert(0, "Best So Far")
         obtained_scores_copy.insert(0, "Random")
         timestamps.insert(0, "Timestamps")
@@ -1326,7 +1368,7 @@ class SurvivalQlearner:
             print("{}".format(obtained_scores_copy), file=rr_file)
             print("{}".format(timestamps), file=rr_file)
 
-        return p[1]
+        return p[1] if p is not None else None
     
 
     def custom_pipeline(self, pipelines_file, model_name, dataset_name="None"):
