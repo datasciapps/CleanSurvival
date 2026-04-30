@@ -4,7 +4,9 @@ import numpy as np
 import json
 import re
 import random
+import os
 import os.path
+from concurrent.futures import ThreadPoolExecutor
 from random import randint
 import optuna
 optuna.logging.set_verbosity(optuna.logging.WARNING)
@@ -751,8 +753,12 @@ class SurvivalQlearner:
                     temp.pop(index)
                     temp.insert(0, name) # adjusting string sequence of strategy
                     pos = imputer_list.index(name)
-                    index_action_list = actions_list.index(pos)
-                    actions_list.pop(index_action_list)
+                    # Some traversals may include imputer name in the string view while
+                    # the numeric path no longer contains its corresponding action index.
+                    # In that case, prepend the imputer instead of failing.
+                    if pos in actions_list:
+                        index_action_list = actions_list.index(pos)
+                        actions_list.pop(index_action_list)
                     actions_list.insert(0, pos) # adjusting actual list of actions
                     traverse_name = ""
                     for item in range(len(temp) - 1):
@@ -1186,108 +1192,112 @@ class SurvivalQlearner:
         average = 0
         obtained_scores = []
         timestamps = []
-        for repeat in range(loop):
+
+        if not check_missing:
+            # Encode once before parallel runs to avoid repeated work.
+            self.dataset, _ = self.handle_categorical(self.dataset)
+
+        goals = ["RSF", "COX", "NN"]
+        metrics_name = ["C-Index", "C-Index", "C-Index"]
+
+        if self.goal not in goals:
+            raise ValueError("Goal invalid. Please choose between RSF, COX, NN")
+
+        g = goals.index(self.goal)
+
+        def _run_one_repeat(repeat_index):
             start_t = time.time()
-            random.seed(time.perf_counter())
+            rng = random.Random(time.perf_counter() + repeat_index)
 
-            # Check if the dataset contains missing values
-            if check_missing:
+            p_result = ({'quality_metric': 0}, None, 0)
+            score = 0
+            traverse_name = ""
+            last_error = None
 
-                # Define methods and action list for datasets with missing values
-                methods = ["-", "CCA", "MI", "Mean", "KNN", "Median", "-", "UC", "LASSO", "RFE", "IG",
-                        "-", "DBID", "DBT", "ED",
-                        "-", "MR", "MR", "MUO",
-                        "-",  "-", "-"]
-                
+            for _attempt in range(3):
+                if check_missing:
+                    methods = ["-", "CCA", "MI", "Mean", "KNN", "Median", "-", "UC", "LASSO", "RFE", "IG",
+                               "-", "DBID", "DBT", "ED",
+                               "-", "MR", "MR", "MUO",
+                               "-", "-", "-"]
 
-                rand_actions_list = [randint(1, 5), randint(6, 10), randint(11, 14),
-                                    randint(15, 18), randint(19, 21)]
+                    rand_actions_list = [
+                        rng.randint(1, 5),   # imputation
+                        rng.randint(7, 10),  # feature selection
+                        rng.randint(12, 14), # duplicate detection
+                        rng.randint(16, 18), # outlier detection
+                        rng.randint(19, 21), # placeholder before goal replacement
+                    ]
+                else:
+                    methods = ["-", "UC", "LASSO", "RFE", "IG",
+                               "-", "DBID", "DBT", "ED",
+                               "-", "MR", "MR", "MUO",
+                               "-", "-", "-"]
 
-            else:
-                # Define methods and action list for datasets without missing values
-                methods = ["-", "UC", "LASSO", "RFE", "IG",
-                        "-",  "DBID", "DBT", "ED",
-                        "-",  "MR", "MR", "MUO",
-                        "-", "-", "-"]
-                
+                    rand_actions_list = [
+                        rng.randint(1, 4),   # feature selection
+                        rng.randint(6, 8),   # duplicate detection
+                        rng.randint(10, 12), # outlier detection
+                        rng.randint(13, 15), # placeholder before goal replacement
+                    ]
 
-                rand_actions_list = [randint(0, 4), randint(5, 8), randint(9, 12),
-                                    randint(13, 15)]
+                traverse_name = methods[rand_actions_list[0]] + " -> "
+                for i in range(1, len(rand_actions_list)):
+                    traverse_name += "%s -> " % methods[rand_actions_list[i]]
+                traverse_name = re.sub('- -> ', '', traverse_name) + goals[g]
+                name_list = re.sub(' -> ', ',', traverse_name).split(",")
 
-            # Define survival analysis goals and metric names
-            goals = ["RSF", "COX", "NN"]
+                if check_missing:
+                    methods = ["CCA", "MI", "Mean", "KNN", "Median",
+                               "UC", "LASSO", "RFE", "IG",
+                               "DBID", "DBT", "ED",
+                               "MR", "MR", "MUO"]
 
-            metrics_name = ["C-Index", "C-Index", "C-Index"]
+                    new_list = []
+                    for i in range(len(name_list)-1):
+                        m = methods.index(name_list[i])
+                        new_list.append(m)
+                    new_list.append(g + len(methods))
+                else:
+                    methods = ["UC", "LASSO", "RFE", "IG",
+                               "DBID", "DBT", "ED",
+                               "MR", "MR", "MUO"]
+                    new_list = []
+                    for i in range(len(name_list)-1):
+                        m = methods.index(name_list[i])
+                        new_list.append(m)
+                    new_list.append(g + len(methods))
 
-            if self.goal not in goals:
-                raise ValueError("Goal invalid. Please choose between RSF, COX, NN")
+                dataset_copy = self.dataset.copy()
+                try:
+                    p_result = self.construct_pipeline(
+                        dataset=dataset_copy,
+                        actions_list=new_list,
+                        time_col=self.time_col,
+                        event_col=self.event_col,
+                        check_missing=check_missing
+                    )
+                    score = p_result[0]['quality_metric']
+                    break
+                except Exception as e:
+                    last_error = e
 
-            else:
+            if last_error is not None and score == 0:
+                print(f"Random cleaning pipeline failed on repeat {repeat_index} after retries: {last_error}")
 
-                g = goals.index(self.goal)
+            elapsed = time.time() - start_t
+            result_line = str((dataset_name, "Random", goals[g], traverse_name, metrics_name[g], "Quality Metric: ", score)) + "\n"
+            return p_result, score, elapsed, result_line
 
-            # Create a string representation of the random cleaning strategy
-            traverse_name = methods[rand_actions_list[0]] + " -> "
+        max_workers = max(1, min(loop, os.cpu_count() or 1))
+        p = ({'quality_metric': 0}, None, 0)
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            for p, score, elapsed, result_line in executor.map(_run_one_repeat, range(loop)):
+                timestamps.append(elapsed)
+                rr += result_line
+                average += score
+                obtained_scores.append(score)
 
-            for i in range(1, len(rand_actions_list)):
-
-                traverse_name += "%s -> " % methods[rand_actions_list[i]]
-
-            traverse_name = re.sub('- -> ', '', traverse_name) + goals[g]
-
-            name_list = re.sub(' -> ', ',', traverse_name).split(",")
-
-            print()
-
-            print()
-
-            print("--------------------------")
-
-            print("Random cleaning strategy:\n", traverse_name)
-
-            print("--------------------------")
-
-            if check_missing:
-
-                rand_actions_list[len(rand_actions_list)-1] = g+len(methods)-6
-
-                methods = ["CCA", "MI", "Mean", "KNN", "Median",
-                                "UC", "LASSO", "RFE", "IG",
-                                "DBID", "DBT", "ED",
-                                "MR", "MR", "MUO"]
-
-                new_list = []
-
-                for i in range(len(name_list)-1):
-
-                    m = methods.index(name_list[i])
-
-                    new_list.append(m)
-
-                new_list.append(g+len(methods))
-
-            else:
-                self.dataset = self.handle_categorical(self.dataset)
-                rand_actions_list[len(rand_actions_list)-1] = g+len(methods)-5
-
-                methods = ["UC", "LASSO", "RFE", "IG",
-                        "DBID", "DBT", "ED",
-                        "MR", "MR", "MUO"]
-                new_list = []
-
-                for i in range(len(name_list)-1):
-
-                    m = methods.index(name_list[i])
-
-                    new_list.append(m)
-
-                new_list.append(g+len(methods))
-            dataset_copy = self.dataset.copy()
-            p = self.construct_pipeline(dataset=dataset_copy, actions_list=new_list, time_col=self.time_col, event_col=self.event_col, check_missing=check_missing)
-            timestamps.append(time.time() - start_t)
-            rr += str((dataset_name, "Random", goals[g], traverse_name, metrics_name[g], "Quality Metric: ", p[0]['quality_metric'])) + "\n"
-            average += p[0]['quality_metric']
-            obtained_scores.append(p[0]['quality_metric'])
         mean = average / loop
         for i in  range(len(obtained_scores)):
             obtained_scores[i] -= mean
